@@ -10550,7 +10550,7 @@ window.addEventListener('hashchange', function () {
     el.removeAttribute('onclick');
     el.addEventListener('click', function(e){
       e.preventDefault();
-      toast(n === 'memo' ? '记忆页 · 还在写' : '生活页 · 还在写');
+      if (typeof window.__nav === 'function') window.__nav(n);
     });
   });
 
