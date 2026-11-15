@@ -5280,13 +5280,18 @@ html.dark .xp-tile{background:linear-gradient(145deg,rgba(37,52,61,.9),rgba(21,3
 <section class="pg" id="pg-life" aria-label="生活">
   <div class="xp-head"><div><div class="xp-kicker">LIFE TOGETHER</div><div class="xp-title">生活</div><div class="xp-sub">日常、照片，以及一起经过的时间。</div></div><div class="xp-kicker">02 / DAYS</div></div>
   <div class="xp-card"><div class="xp-stat"><span>我们在一起的日子</span><strong id="xp-days-count">—</strong></div><div class="xp-sub" style="margin-top:.45rem">从 2026.10.28 开始，按真实日期计算。</div></div>
+  <div class="xp-kicker" style="margin:.25rem .25rem .65rem">OUR DAILY DOORS</div>
   <div class="xp-grid">
     <button class="xp-tile" type="button" data-xp-action="album"><span class="xp-glyph">▧</span><b>相册</b><small>把照片和当时的心情收起来</small></button>
     <button class="xp-tile" type="button" data-xp-action="weather"><span class="xp-glyph">☼</span><b>天气</b><small>看看今天窗外的天色</small></button>
     <button class="xp-tile" type="button" data-xp-action="chat"><span class="xp-glyph">♡</span><b>聊天</b><small>回到你们的对话</small></button>
     <button class="xp-tile" type="button" data-xp-action="home"><span class="xp-glyph">⌂</span><b>小窝首页</b><small>回到桌面和日常挂件</small></button>
+    <button class="xp-tile" type="button" data-xp-action="world"><span class="xp-glyph">✧</span><b>世界书</b><small>整理人物、背景与共同设定</small></button>
+    <button class="xp-tile" type="button" data-xp-action="models"><span class="xp-glyph">⌘</span><b>模型与 API</b><small>管理聊天模型和能力绑定</small></button>
+    <button class="xp-tile" type="button" data-xp-action="beauty"><span class="xp-glyph">◌</span><b>外观美化</b><small>调整壁纸、主题与聊天气泡</small></button>
+    <button class="xp-tile" type="button" data-xp-action="settings"><span class="xp-glyph">⚙</span><b>关系与档案</b><small>回到宋祁设定和共同档案</small></button>
   </div>
-  <div class="xp-card" style="margin-top:.8rem"><div class="xp-kicker">A SHARED PLACE</div><div style="font:1rem/1.8 'Songti SC',serif;margin-top:.45rem">生活不需要被安排得满满当当。这里先放下已经做好的入口，之后再把日历、音乐和共同清单接进同一套数据。</div></div>
+  <div class="xp-card" style="margin-top:.8rem"><div class="xp-kicker">A SHARED PLACE</div><div style="font:1rem/1.8 'Songti SC',serif;margin-top:.45rem">从日常照片到共同设定，从聊天模型到相处档案，都从这里进入。每个入口都回到原有功能，不另造一套重复数据。</div></div>
 </section>
 
 <nav class="tabbar" aria-label="主导航">
@@ -10654,6 +10659,13 @@ window.addEventListener('hashchange', function () {
     var start=new Date(2026,9,28);var today=new Date();today.setHours(0,0,0,0);
     el.textContent=Math.max(1,Math.floor((today-start)/86400000)+1);
   }
+  function openLegacy(view){
+    var allowed={world:1,console:1,beauty:1,settings:1,mcp:1};
+    if(!allowed[view]||typeof window.openSub!=='function')return false;
+    nav('home');
+    window.openSub(view);
+    return true;
+  }
   document.addEventListener('DOMContentLoaded',function(){
     var form=document.getElementById('xp-mem-form'),input=document.getElementById('xp-mem-input');
     if(form)form.addEventListener('submit',function(e){
@@ -10668,11 +10680,15 @@ window.addEventListener('hashchange', function () {
       btn.addEventListener('click',function(){
         var action=btn.getAttribute('data-xp-action');
         if(action==='chat'||action==='home'){nav(action);return;}
-        nav('home');
-        setTimeout(function(){
-          var target=document.querySelector('[data-sheet="'+(action==='album'?'albumPage':'weatherPage')+'"]');
-          if(target)target.click();
-        },80);
+        var legacyViews={world:'world',models:'console',beauty:'beauty',settings:'settings'};
+        if(legacyViews[action]){openLegacy(legacyViews[action]);return;}
+        if(action==='album'||action==='weather'){
+          nav('home');
+          setTimeout(function(){
+            var target=document.querySelector('[data-sheet="'+(action==='album'?'albumPage':'weatherPage')+'"]');
+            if(target)target.click();
+          },80);
+        }
       });
     });
     if((location.hash||'').slice(1)==='memo'||(location.hash||'').slice(1)==='life')nav(location.hash.slice(1));
@@ -10684,7 +10700,7 @@ window.addEventListener('hashchange', function () {
   }
   window.addEventListener('storage',onMemoryStorageChange);
   window.addEventListener('xiaowo:store-change',onMemoryStorageChange);
-  window.XiaowoPages={renderMemories:renderMemories,renderDays:renderDays,go:nav};
+  window.XiaowoPages={renderMemories:renderMemories,renderDays:renderDays,go:nav,openLegacy:openLegacy};
 })();
 </script>
 
