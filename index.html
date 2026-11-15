@@ -3375,6 +3375,48 @@ html.dark .xp-tile{background:linear-gradient(145deg,rgba(37,52,61,.9),rgba(21,3
 .xp-tile small{display:block;color:#8ba8b5;font-size:.62rem;margin-top:.28rem}
 .xp-glyph{font-size:1.25rem;color:#6e9caf}
 .xp-empty{text-align:center;color:#8ba8b5;font:italic .75rem Georgia,serif;padding:1.4rem .5rem}
+
+/* Life: red thread + wind chimes */
+#pg-life{padding-top:calc(.75rem + env(safe-area-inset-top))!important}
+.life-cover{position:relative;min-height:13.4rem;overflow:hidden;border-radius:1.45rem;padding:1.05rem 1.1rem .95rem;background:linear-gradient(145deg,#f5f9f8 0%,#e5f0f2 52%,#d8e8ec 100%);border:1px solid rgba(255,255,255,.9);box-shadow:0 .65rem 1.7rem rgba(55,91,105,.1);color:#345463}
+html.dark .life-cover{background:linear-gradient(145deg,#243943,#1b303a 60%,#294653);border-color:rgba(255,255,255,.08);color:#e1edf2}
+.life-cover-top{display:flex;justify-content:space-between;font: .56rem Georgia,serif;letter-spacing:.17em;color:#7898a5}
+.life-title{font:600 1.55rem "Songti SC","Noto Serif SC",serif;letter-spacing:.08em;margin-top:1.05rem}
+.life-subtitle{font-size:.68rem;color:#7898a5;margin-top:.32rem}
+html.dark .life-subtitle,html.dark .life-cover-top{color:#9bb7c2}
+.life-thread-art{position:absolute;right:-.2rem;top:1.9rem;width:8.7rem;height:5rem;opacity:.72;pointer-events:none}
+.life-thread-art:before{content:"";position:absolute;left:.4rem;right:.3rem;top:1.2rem;height:1px;background:#b85d65;transform:rotate(-13deg);box-shadow:0 0 0 1px rgba(184,93,101,.08)}
+.life-thread-art i{position:absolute;left:3.9rem;top:.5rem;width:1px;height:3.8rem;background:linear-gradient(#b85d65,#9dbbc4)}
+.life-thread-art b{position:absolute;left:3.35rem;top:2.05rem;font:1.5rem Georgia,serif;color:#b85d65}
+.life-thread-art em{position:absolute;left:3.55rem;top:3.35rem;font-style:normal;color:#7898a5}
+.life-days{display:flex;align-items:baseline;gap:.35rem;margin-top:1.05rem;color:#7898a5;font-size:.62rem}
+.life-days strong{font:600 1.65rem Georgia,serif;color:#426e82;margin-left:.2rem}
+html.dark .life-days strong{color:#c2e2eb}
+.life-days-note{margin-left:auto;font:italic .58rem Georgia,serif}
+.life-section-head{display:flex;flex-direction:column;gap:.22rem;margin:1.25rem .2rem .65rem}
+.life-section-head span{font: .53rem Georgia,serif;letter-spacing:.2em;color:#9aafb8}
+.life-section-head b{font:600 .95rem "Songti SC","Noto Serif SC",serif;color:#496b7a}
+html.dark .life-section-head b{color:#d5e5eb}
+.life-feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem}
+.life-feature{min-height:6.1rem;text-align:left;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;padding:.78rem .82rem;border:1px solid rgba(255,255,255,.92);border-radius:1rem;background:linear-gradient(145deg,rgba(255,255,255,.9),rgba(227,240,243,.72));box-shadow:0 .3rem .85rem rgba(55,91,105,.06);color:#456574}
+html.dark .life-feature{background:linear-gradient(145deg,rgba(42,60,69,.92),rgba(29,43,51,.9));border-color:rgba(255,255,255,.08);color:#d9e8ed}
+.life-feature-wide{grid-column:1/-1;min-height:4.65rem;flex-direction:row;align-items:center;justify-content:flex-start;gap:.75rem}
+.life-feature-icon{font:1.15rem Georgia,serif;color:#b45e68}
+.life-feature b,.life-bell-list b{display:block;font:600 .88rem "Songti SC","Noto Serif SC",serif}
+.life-feature small,.life-bell-list small{display:block;font-size:.59rem;color:#91a8b1;margin-top:.2rem}
+.life-feature i{font-style:normal;margin-left:auto;color:#9ab0b8}
+.life-bell-head{margin-top:1.35rem}
+.life-bell-list{border:1px solid rgba(255,255,255,.9);border-radius:1.05rem;overflow:hidden;background:rgba(255,255,255,.56);box-shadow:0 .35rem 1rem rgba(55,91,105,.05)}
+html.dark .life-bell-list{background:rgba(28,42,50,.76);border-color:rgba(255,255,255,.08)}
+.life-bell-list button{width:100%;display:flex;align-items:center;gap:.75rem;text-align:left;padding:.76rem .85rem;border:0;background:transparent;color:inherit}
+.life-bell-list button+button{border-top:1px solid rgba(157,187,196,.2)}
+.life-bell-symbol{width:2rem;height:2rem;flex:0 0 2rem;display:grid;place-items:center;border-radius:50%;background:rgba(213,233,237,.55);color:#a65c66;font:1rem Georgia,serif}
+html.dark .life-bell-symbol{background:rgba(160,195,207,.1)}
+.life-bell-list button>span:nth-child(2){flex:1;min-width:0}
+.life-bell-list button>i{font-style:normal;color:#9ab0b8}
+.life-footer-note{text-align:center;padding:1rem .4rem .2rem;color:#94aab3;font:italic .62rem/1.8 Georgia,"Songti SC",serif;letter-spacing:.04em}
+.life-feature:active,.life-bell-list button:active{transform:scale(.985);opacity:.78}
+
 </style>
 </head>
 <body>
@@ -4069,7 +4111,7 @@ html.dark .xp-tile{background:linear-gradient(145deg,rgba(37,52,61,.9),rgba(21,3
 
     <!-- 底栏 -->
     <nav class="bottom-nav" aria-label="主导航" data-page-node-id="ZjjSNxEQCAqhWa64y0IdFN">
-      <a class="nav-item" data-nav="chat" href="chat.html" data-page-node-id="YxiJwYCfBCLtv8QBAEabLN"><svg class="ic" data-page-node-id="VdNuDOPgzz0ADGa1JQyhWi"><use href="#i-chat" data-page-node-id="0B7WBuQvsCGUSdaYY8w9qX"/></svg>love</a>
+      <a class="nav-item" data-nav="chat" href="chat.html" data-page-node-id="YxiJwYCfBCLtv8QBAEabLN"><svg class="ic" data-page-node-id="VdNuDOPgzz0ADGa1JQyhWi"><use href="#i-chat" data-page-node-id="0B7WBuQvsCGUSdaYY8w9qX"/></svg>小窝</a>
       <a class="nav-item" data-nav="memo" data-page-node-id="5xvImaeWchVxeHCBzMGnyh"><svg class="ic" data-page-node-id="xD53keGbGyT5BF7DPmDnKe"><use href="#i-memory" data-page-node-id="x5389fZUBkiCCNcLr2jdVm"/></svg>记忆</a>
       <a class="nav-item nav-home active" data-nav="home" onclick="void(0)" aria-label="首页" aria-current="page" data-page-node-id="JAnfJlg8ItjbwGTNQ1AJJ8">
         <span class="home-orb" data-page-node-id="nCS6htjRoVlN7shcKxrgqY"><svg class="ic" data-page-node-id="zGo5urhiGMGMRkmhaCfD8y"><use href="#i-home" data-page-node-id="SYcgqfDRhGQ3sI7mN3BWOV"/></svg></span>
@@ -4243,7 +4285,7 @@ html.dark .xp-tile{background:linear-gradient(145deg,rgba(37,52,61,.9),rgba(21,3
     <div class="deck-hint" id="hdHint">quietly here · 小窝</div>
   </div>
   <div class="bottom-nav">
-    <a class="nav-item" data-nav="chat" href="chat.html"><div class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 11.6c0 3.9-3.8 7-8.4 7-1 0-1.9-.14-2.8-.4L4.5 19.8l1.2-3.3a6.6 6.6 0 0 1-1.6-4.3c0-3.9 3.8-7 8.4-7s7.9 3.1 7.9 7Z"/></svg></div>love</a>
+    <a class="nav-item" data-nav="chat" href="chat.html"><div class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 11.6c0 3.9-3.8 7-8.4 7-1 0-1.9-.14-2.8-.4L4.5 19.8l1.2-3.3a6.6 6.6 0 0 1-1.6-4.3c0-3.9 3.8-7 8.4-7s7.9 3.1 7.9 7Z"/></svg></div>小窝</a>
     <a class="nav-item" data-nav="memo"><div class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 3.8 8.2 12 12.4l8.2-4.2L12 4Z"/><path d="m4.2 12.6 7.8 4 7.8-4"/><path d="m4.2 16.6 7.8 4 7.8-4"/></svg></div>记忆</a>
     <a class="nav-center" data-nav="home" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.2 10.8 12 4.2l7.8 6.6v7.4a1.8 1.8 0 0 1-1.8 1.8h-3.7v-5.2H9.7v5.2H6a1.8 1.8 0 0 1-1.8-1.8v-7.4Z"/></svg></a>
     <a class="nav-item" data-nav="life"><div class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.6" y="5.2" width="16.8" height="15" rx="2.6"/><path d="M8 3.4v3.6M16 3.4v3.6M3.6 9.6h16.8"/></svg></div>生活</a>
@@ -5278,24 +5320,37 @@ html.dark .xp-tile{background:linear-gradient(145deg,rgba(37,52,61,.9),rgba(21,3
   <div class="xp-card"><div class="xp-kicker">A SMALL NOTE</div><div style="font:1rem/1.9 'Songti SC',serif;margin-top:.5rem">记忆不是一份清单。它是某句话被认真听见之后，仍然留在这里的回声。</div></div>
 </section>
 <section class="pg" id="pg-life" aria-label="生活">
-  <div class="xp-head"><div><div class="xp-kicker">LIFE TOGETHER</div><div class="xp-title">生活</div><div class="xp-sub">日常、照片，以及一起经过的时间。</div></div><div class="xp-kicker">02 / DAYS</div></div>
-  <div class="xp-card"><div class="xp-stat"><span>我们在一起的日子</span><strong id="xp-days-count">—</strong></div><div class="xp-sub" style="margin-top:.45rem">从 2026.10.28 开始，按真实日期计算。</div></div>
-  <div class="xp-kicker" style="margin:.25rem .25rem .65rem">OUR DAILY DOORS</div>
-  <div class="xp-grid">
-    <button class="xp-tile" type="button" data-xp-action="album"><span class="xp-glyph">▧</span><b>相册</b><small>把照片和当时的心情收起来</small></button>
-    <button class="xp-tile" type="button" data-xp-action="weather"><span class="xp-glyph">☼</span><b>天气</b><small>看看今天窗外的天色</small></button>
-    <button class="xp-tile" type="button" data-xp-action="chat"><span class="xp-glyph">♡</span><b>聊天</b><small>回到你们的对话</small></button>
-    <button class="xp-tile" type="button" data-xp-action="home"><span class="xp-glyph">⌂</span><b>小窝首页</b><small>回到桌面和日常挂件</small></button>
-    <button class="xp-tile" type="button" data-xp-action="world"><span class="xp-glyph">✧</span><b>世界书</b><small>整理人物、背景与共同设定</small></button>
-    <button class="xp-tile" type="button" data-xp-action="models"><span class="xp-glyph">⌘</span><b>模型与 API</b><small>管理聊天模型和能力绑定</small></button>
-    <button class="xp-tile" type="button" data-xp-action="beauty"><span class="xp-glyph">◌</span><b>外观美化</b><small>调整壁纸、主题与聊天气泡</small></button>
-    <button class="xp-tile" type="button" data-xp-action="settings"><span class="xp-glyph">⚙</span><b>关系与档案</b><small>回到宋祁设定和共同档案</small></button>
+  <div class="life-cover">
+    <div class="life-cover-top"><span>OUR LITTLE LIFE</span><span>红绳 · 风铃</span></div>
+    <div class="life-title">把日子，系在一起。</div>
+    <div class="life-subtitle">有些事慢慢记，有些声音轻轻响。</div>
+    <div class="life-thread-art" aria-hidden="true"><i></i><b>⌁</b><em>◦</em></div>
+    <div class="life-days"><span>我们一起经过</span><strong id="xp-days-count">—</strong><small>天</small><span class="life-days-note">从 2026.10.28 开始</span></div>
   </div>
-  <div class="xp-card" style="margin-top:.8rem"><div class="xp-kicker">A SHARED PLACE</div><div style="font:1rem/1.8 'Songti SC',serif;margin-top:.45rem">从日常照片到共同设定，从聊天模型到相处档案，都从这里进入。每个入口都回到原有功能，不另造一套重复数据。</div></div>
+  <div class="life-section-head"><span>THE THREAD</span><b>把生活认真收好</b></div>
+  <div class="life-feature-grid">
+    <button class="life-feature life-feature-wide" type="button" data-life-feature="diary"><span class="life-feature-icon">✎</span><span><b>日记</b><small>写下今天，也写下我们</small></span><i>↗</i></button>
+    <button class="life-feature" type="button" data-life-feature="health"><span class="life-feature-icon">♡</span><b>健康</b><small>身体与状态</small></button>
+    <button class="life-feature" type="button" data-life-feature="cycle"><span class="life-feature-icon">◒</span><b>生理期</b><small>温柔记录周期</small></button>
+    <button class="life-feature" type="button" data-life-feature="calendar"><span class="life-feature-icon">▦</span><b>日历</b><small>重要的日子</small></button>
+    <button class="life-feature" type="button" data-life-feature="plans"><span class="life-feature-icon">⌁</span><b>安排</b><small>一起计划日常</small></button>
+    <button class="life-feature" type="button" data-life-feature="study"><span class="life-feature-icon">⌑</span><b>学习</b><small>一点点向前</small></button>
+  </div>
+  <div class="life-section-head life-bell-head"><span>THE BELLS</span><b>留一些自由的回响</b></div>
+  <div class="life-bell-list">
+    <button type="button" data-life-feature="abyss"><span class="life-bell-symbol">☾</span><span><b>深渊区</b><small>留给不必解释的情绪与夜晚</small></span><i>↗</i></button>
+    <button type="button" data-life-feature="games"><span class="life-bell-symbol">♧</span><span><b>游戏</b><small>一起玩点什么</small></span><i>↗</i></button>
+    <button type="button" data-life-feature="drawer"><span class="life-bell-symbol">▤</span><span><b>抽屉</b><small>把零碎的小东西收起来</small></span><i>↗</i></button>
+    <button type="button" data-life-feature="drift"><span class="life-bell-symbol">⌁</span><span><b>偏航</b><small>偶尔离开既定路线</small></span><i>↗</i></button>
+    <button type="button" data-life-feature="music"><span class="life-bell-symbol">♫</span><span><b>音乐</b><small>共享正在播放的声音</small></span><i>↗</i></button>
+    <button type="button" data-life-feature="reading"><span class="life-bell-symbol">▧</span><span><b>一起读</b><small>共读一本书，留下批注</small></span><i>↗</i></button>
+    <button type="button" data-life-feature="watch"><span class="life-bell-symbol">◉</span><span><b>共赏</b><small>一起看见同一片风景</small></span><i>↗</i></button>
+  </div>
+  <div class="life-footer-note">红绳牵着彼此，风铃收着日常。这里还会慢慢长出新的房间。</div>
 </section>
 
 <nav class="tabbar" aria-label="主导航">
-  <a class="tab-item" data-nav="chat"><svg class="ic"><use href="#i-chat"/></svg><span>love</span></a>
+  <a class="tab-item" data-nav="chat"><svg class="ic"><use href="#i-chat"/></svg><span>小窝</span></a>
   <a class="tab-item" data-nav="memo"><svg class="ic"><use href="#i-memory"/></svg><span>记忆</span></a>
   <a class="tab-item tab-home" data-nav="home"><span class="tab-orb"><svg class="ic"><use href="#i-home"/></svg></span><span>首页</span></a>
   <a class="tab-item" data-nav="life"><svg class="ic"><use href="#i-grid"/></svg><span>生活</span></a>
