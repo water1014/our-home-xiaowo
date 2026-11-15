@@ -3376,9 +3376,9 @@ html.dark .xp-tile{background:linear-gradient(145deg,rgba(37,52,61,.9),rgba(21,3
 .xp-glyph{font-size:1.25rem;color:#6e9caf}
 .xp-empty{text-align:center;color:#8ba8b5;font:italic .75rem Georgia,serif;padding:1.4rem .5rem}
 
-/* Life: one red cord, many hanging chimes and paper notes */
-#pg-life{padding:calc(.7rem + env(safe-area-inset-top)) .9rem 1.2rem!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch;box-sizing:border-box}
-.life-cover{position:relative;min-height:9.6rem;overflow:hidden;border-radius:1.35rem;padding:1rem 1.05rem .9rem;background:linear-gradient(145deg,#f5f9f8 0%,#e5f0f2 52%,#d8e8ec 100%);border:1px solid rgba(255,255,255,.9);box-shadow:0 .65rem 1.7rem rgba(55,91,105,.1);color:#345463}
+/* Life: several bowed red clotheslines with softly swaying chimes */
+#pg-life{padding:calc(.7rem + env(safe-area-inset-top)) .85rem 1.2rem!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch;box-sizing:border-box}
+.life-cover{position:relative;min-height:9.2rem;overflow:hidden;border-radius:1.35rem;padding:1rem 1.05rem .9rem;background:linear-gradient(145deg,#f5f9f8 0%,#e5f0f2 52%,#d8e8ec 100%);border:1px solid rgba(255,255,255,.9);box-shadow:0 .65rem 1.7rem rgba(55,91,105,.1);color:#345463}
 html.dark .life-cover{background:linear-gradient(145deg,#243943,#1b303a 60%,#294653);border-color:rgba(255,255,255,.08);color:#e1edf2}
 .life-cover-top{display:flex;justify-content:space-between;font:.56rem Georgia,serif;letter-spacing:.17em;color:#7898a5}
 .life-title{font:600 1.45rem "Songti SC","Noto Serif SC",serif;letter-spacing:.08em;margin-top:.85rem}
@@ -3388,31 +3388,38 @@ html.dark .life-subtitle,html.dark .life-cover-top{color:#9bb7c2}
 .life-days strong{font:600 1.5rem Georgia,serif;color:#426e82;margin-left:.2rem}
 html.dark .life-days strong{color:#c2e2eb}
 .life-days-note{margin-left:auto;font:italic .58rem Georgia,serif}
-.life-cord-intro{display:flex;justify-content:space-between;align-items:center;margin:1.2rem .2rem .55rem;color:#7898a5}
+.life-cord-intro{display:flex;justify-content:space-between;align-items:center;margin:1.2rem .2rem .35rem;color:#7898a5}
 .life-cord-intro b{font:600 .9rem "Songti SC","Noto Serif SC",serif;color:#496b7a;letter-spacing:.08em}
 html.dark .life-cord-intro b{color:#d5e5eb}
 .life-cord-intro span{font:.53rem Georgia,serif;letter-spacing:.16em}
-.life-hanging-field{position:relative;padding:1.15rem .15rem .8rem;isolation:isolate}
-.life-hanging-field:before{content:"";position:absolute;z-index:-1;left:.15rem;right:.15rem;top:.55rem;height:2px;border-radius:50%;background:linear-gradient(90deg,#a94f5b,#d28b8e 45%,#a94f5b);box-shadow:0 1px 2px rgba(139,55,65,.18);transform:rotate(-1.2deg)}
-.life-hanging-field:after{content:"";position:absolute;z-index:-1;left:0;right:0;top:.48rem;height:1.4rem;border-top:1px solid rgba(184,93,101,.18);border-radius:50%}
-.life-note-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:.85rem;row-gap:.55rem}
-.life-note{position:relative;min-width:0;min-height:7.25rem;padding:1.45rem .5rem .55rem;border:0;background:transparent;color:#456574;display:flex;flex-direction:column;align-items:center;text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
-html.dark .life-note{color:#d9e8ed}
-.life-note:before{content:"";position:absolute;top:-.55rem;left:50%;height:1.55rem;width:1px;background:linear-gradient(#b85d65,#c7a1a2)}
-.life-note:after{content:"";position:absolute;top:.82rem;left:calc(50% - .32rem);width:.64rem;height:.64rem;border:1px solid #b85d65;border-radius:50% 50% 45% 45%;background:linear-gradient(145deg,#f8eeee,#d9aeb0);box-shadow:0 .12rem .3rem rgba(130,65,73,.12)}
-.life-chime{position:relative;margin-top:.05rem;width:1.55rem;height:1.1rem;display:block}
-.life-chime:before{content:"";position:absolute;left:50%;top:0;height:.62rem;width:1px;background:#b85d65}
-.life-chime:after{content:"";position:absolute;left:calc(50% - .38rem);top:.48rem;width:.76rem;height:.55rem;border:1px solid #b8757a;border-radius:.2rem .2rem .48rem .48rem;background:linear-gradient(145deg,#f6e8e8,#d9b6b7);box-shadow:0 .1rem .22rem rgba(130,65,73,.12)}
-.life-paper{position:relative;width:100%;max-width:9.3rem;min-height:3.45rem;margin-top:.15rem;padding:.72rem .5rem .5rem;border:1px solid rgba(190,166,151,.35);border-radius:.12rem .12rem .38rem .12rem;background:linear-gradient(145deg,rgba(255,253,247,.96),rgba(245,239,226,.94));box-shadow:0 .35rem .75rem rgba(71,83,85,.09);color:#6d6260;transform:rotate(-1deg);display:flex;align-items:center;justify-content:center;font:600 .82rem "Songti SC","Noto Serif SC",serif;letter-spacing:.06em}
-.life-note:nth-child(4n+2) .life-paper{transform:rotate(1.3deg)}
-.life-note:nth-child(3n) .life-paper{transform:rotate(-.4deg)}
+.life-hanging-field{position:relative;padding:.1rem 0 .45rem;isolation:isolate}
+.life-rope-row{position:relative;min-height:9.7rem;margin:.05rem 0 .2rem;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:start}
+.life-rope-row.four{grid-template-columns:repeat(4,minmax(0,1fr));padding:0 8%}
+.life-rope{position:absolute;z-index:-1;left:0;top:0;width:100%;height:2.2rem;overflow:visible;pointer-events:none}
+.life-rope path{fill:none;stroke:#b84f5c;stroke-width:2.4;stroke-linecap:round;filter:drop-shadow(0 1px 1px rgba(126,45,55,.2))}
+html.dark .life-rope path{stroke:#d17b83}
+.life-note{position:relative;min-width:0;height:9.5rem;padding:1.55rem .12rem .25rem;border:0;background:transparent;color:#456574;display:flex;flex-direction:column;align-items:center;text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent;animation:life-sway 5.8s ease-in-out infinite;transform-origin:50% 1.2rem}
+.life-note:nth-child(2){animation-delay:-1.4s}
+.life-note:nth-child(3){animation-delay:-3.1s}
+.life-note:nth-child(4){animation-delay:-.8s}
+.life-note:nth-child(5){animation-delay:-2.4s}
+.life-rope-row:nth-child(2) .life-note{animation-duration:6.7s}
+.life-rope-row:nth-child(3) .life-note{animation-duration:5.2s}
+@keyframes life-sway{0%,100%{transform:rotate(-1.3deg)}50%{transform:rotate(1.6deg)}}
+.life-note:before{content:"";position:absolute;top:.2rem;left:50%;height:1.55rem;width:1px;background:linear-gradient(#b84f5c,#d4a1a2)}
+.life-chime{position:relative;margin-top:.55rem;width:2.15rem;height:1.75rem;display:block;filter:drop-shadow(0 .16rem .22rem rgba(80,70,70,.12))}
+.life-chime:before{content:"";position:absolute;left:50%;top:0;height:.42rem;width:1px;background:#b84f5c}
+.life-chime:after{content:"";position:absolute;left:calc(50% - .68rem);top:.34rem;width:1.36rem;height:1.12rem;border:1px solid rgba(160,111,112,.65);border-radius:48% 48% 34% 34% / 48% 48% 25% 25%;background:radial-gradient(ellipse at 35% 24%,rgba(255,255,255,.95),rgba(255,255,255,.55) 32%,rgba(224,210,207,.55) 68%,rgba(174,151,150,.42));box-shadow:inset 0 0 0 2px rgba(255,255,255,.28),0 .12rem .2rem rgba(92,68,68,.1)}
+.life-chime i{position:absolute;z-index:2;left:50%;top:1.36rem;width:.34rem;height:.34rem;margin-left:-.17rem;border-radius:50%;background:linear-gradient(145deg,#fff,#d8b7b8);box-shadow:0 0 0 1px rgba(172,105,111,.22)}
+.life-chime i:after{content:"";position:absolute;left:50%;top:.28rem;width:1px;height:.48rem;background:#bd777d}
+.life-paper{position:relative;width:calc(100% - .2rem);max-width:5.8rem;min-height:2.55rem;margin-top:.78rem;padding:.55rem .12rem .48rem;border:1px solid rgba(190,166,151,.38);border-radius:.12rem .12rem .34rem .12rem;background:linear-gradient(145deg,rgba(255,253,248,.97),rgba(240,235,226,.95));box-shadow:0 .28rem .65rem rgba(71,83,85,.1);color:#6d6260;display:flex;align-items:center;justify-content:center;font:600 .75rem "Songti SC","Noto Serif SC",serif;letter-spacing:.04em;white-space:nowrap}
+.life-paper small{position:absolute;right:.2rem;bottom:.1rem;font:.4rem Georgia,serif;color:#b58d8c;letter-spacing:.05em}
 html.dark .life-paper{background:linear-gradient(145deg,#e8e0d3,#d9d0c2);color:#625b56;border-color:rgba(255,255,255,.18)}
-.life-paper small{position:absolute;right:.3rem;bottom:.16rem;font: .46rem Georgia,serif;color:#b58d8c;letter-spacing:.08em}
-.life-note:active{transform:translateY(.12rem);opacity:.76}
-.life-footer-note{text-align:center;padding:.6rem .4rem .4rem;color:#94aab3;font:italic .62rem/1.8 Georgia,"Songti SC",serif;letter-spacing:.04em}
+.life-note:active{filter:brightness(.94)}
+.life-footer-note{text-align:center;padding:.5rem .4rem .5rem;color:#94aab3;font:italic .62rem/1.8 Georgia,"Songti SC",serif;letter-spacing:.04em}
 .life-placeholder{position:absolute;inset:0;z-index:8;display:none;flex-direction:column;overflow:hidden;background:var(--u-bg,linear-gradient(180deg,#d6edf7,#e8f7fb));padding:calc(.7rem + env(safe-area-inset-top)) 1rem 1rem;box-sizing:border-box}
 .life-placeholder.show{display:flex}
-.life-placeholder-back{align-self:flex-start;border:0;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.7);border-radius:2rem;padding:.48rem .8rem;color:#496b7a;font: .72rem -apple-system,BlinkMacSystemFont,sans-serif}
+.life-placeholder-back{align-self:flex-start;border:0;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.7);border-radius:2rem;padding:.48rem .8rem;color:#496b7a;font:.72rem -apple-system,BlinkMacSystemFont,sans-serif}
 .life-placeholder-content{margin:auto 0;text-align:center;padding:2rem 1rem}
 .life-placeholder-kicker{font:.55rem Georgia,serif;letter-spacing:.2em;color:#91aab4}
 .life-placeholder-title{font:600 1.7rem "Songti SC","Noto Serif SC",serif;color:#456574;margin-top:.9rem}
@@ -3420,7 +3427,8 @@ html.dark .life-paper{background:linear-gradient(145deg,#e8e0d3,#d9d0c2);color:#
 .life-placeholder-copy{font:.72rem/1.9 -apple-system,BlinkMacSystemFont,sans-serif;color:#8ba4af}
 html.dark .life-placeholder-title{color:#d9e8ed}
 html.dark .life-placeholder-copy{color:#9bb7c2}
-@media(min-width:480px){.life-note-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.life-note{animation:none}}
+@media(max-width:360px){.life-note{padding-left:0;padding-right:0}.life-paper{font-size:.68rem;letter-spacing:0}.life-rope-row{min-height:9.2rem}}
 
 </style>
 </head>
@@ -5333,21 +5341,9 @@ html.dark .life-placeholder-copy{color:#9bb7c2}
   </div>
   <div class="life-cord-intro"><b>绳上的小风铃</b><span>OUR LITTLE THINGS</span></div>
   <div class="life-hanging-field">
-    <div class="life-note-grid">
-      <button class="life-note" type="button" data-life-feature="diary" aria-label="打开日记"><span class="life-chime"></span><span class="life-paper">日记<small>01</small></span></button>
-      <button class="life-note" type="button" data-life-feature="health" aria-label="打开健康"><span class="life-chime"></span><span class="life-paper">健康<small>02</small></span></button>
-      <button class="life-note" type="button" data-life-feature="cycle" aria-label="打开生理期"><span class="life-chime"></span><span class="life-paper">生理期<small>03</small></span></button>
-      <button class="life-note" type="button" data-life-feature="abyss" aria-label="打开深渊区"><span class="life-chime"></span><span class="life-paper">深渊区<small>04</small></span></button>
-      <button class="life-note" type="button" data-life-feature="games" aria-label="打开游戏"><span class="life-chime"></span><span class="life-paper">游戏<small>05</small></span></button>
-      <button class="life-note" type="button" data-life-feature="calendar" aria-label="打开日历"><span class="life-chime"></span><span class="life-paper">日历<small>06</small></span></button>
-      <button class="life-note" type="button" data-life-feature="plans" aria-label="打开安排"><span class="life-chime"></span><span class="life-paper">安排<small>07</small></span></button>
-      <button class="life-note" type="button" data-life-feature="study" aria-label="打开学习"><span class="life-chime"></span><span class="life-paper">学习<small>08</small></span></button>
-      <button class="life-note" type="button" data-life-feature="drawer" aria-label="打开抽屉"><span class="life-chime"></span><span class="life-paper">抽屉<small>09</small></span></button>
-      <button class="life-note" type="button" data-life-feature="drift" aria-label="打开偏航"><span class="life-chime"></span><span class="life-paper">偏航<small>10</small></span></button>
-      <button class="life-note" type="button" data-life-feature="music" aria-label="打开音乐"><span class="life-chime"></span><span class="life-paper">音乐<small>11</small></span></button>
-      <button class="life-note" type="button" data-life-feature="reading" aria-label="打开一起读"><span class="life-chime"></span><span class="life-paper">一起读<small>12</small></span></button>
-      <button class="life-note" type="button" data-life-feature="watch" aria-label="打开共赏"><span class="life-chime"></span><span class="life-paper">共赏<small>13</small></span></button>
-    </div>
+    <div class="life-rope-row "><svg class="life-rope" viewBox="0 0 1000 42" preserveAspectRatio="none" aria-hidden="true"><path d="M 5 5 Q 500 78 995 5"/></svg><button class="life-note" type="button" data-life-feature="diary" aria-label="打开日记"><span class="life-chime"><i></i></span><span class="life-paper">日记<small>01</small></span></button><button class="life-note" type="button" data-life-feature="health" aria-label="打开健康"><span class="life-chime"><i></i></span><span class="life-paper">健康<small>02</small></span></button><button class="life-note" type="button" data-life-feature="cycle" aria-label="打开生理期"><span class="life-chime"><i></i></span><span class="life-paper">生理期<small>03</small></span></button><button class="life-note" type="button" data-life-feature="abyss" aria-label="打开深渊区"><span class="life-chime"><i></i></span><span class="life-paper">深渊区<small>04</small></span></button><button class="life-note" type="button" data-life-feature="games" aria-label="打开游戏"><span class="life-chime"><i></i></span><span class="life-paper">游戏<small>05</small></span></button></div>
+    <div class="life-rope-row four"><svg class="life-rope" viewBox="0 0 1000 42" preserveAspectRatio="none" aria-hidden="true"><path d="M 5 5 Q 500 78 995 5"/></svg><button class="life-note" type="button" data-life-feature="calendar" aria-label="打开日历"><span class="life-chime"><i></i></span><span class="life-paper">日历<small>06</small></span></button><button class="life-note" type="button" data-life-feature="plans" aria-label="打开安排"><span class="life-chime"><i></i></span><span class="life-paper">安排<small>07</small></span></button><button class="life-note" type="button" data-life-feature="study" aria-label="打开学习"><span class="life-chime"><i></i></span><span class="life-paper">学习<small>08</small></span></button><button class="life-note" type="button" data-life-feature="drawer" aria-label="打开抽屉"><span class="life-chime"><i></i></span><span class="life-paper">抽屉<small>09</small></span></button></div>
+    <div class="life-rope-row four"><svg class="life-rope" viewBox="0 0 1000 42" preserveAspectRatio="none" aria-hidden="true"><path d="M 5 5 Q 500 78 995 5"/></svg><button class="life-note" type="button" data-life-feature="drift" aria-label="打开偏航"><span class="life-chime"><i></i></span><span class="life-paper">偏航<small>10</small></span></button><button class="life-note" type="button" data-life-feature="music" aria-label="打开音乐"><span class="life-chime"><i></i></span><span class="life-paper">音乐<small>11</small></span></button><button class="life-note" type="button" data-life-feature="reading" aria-label="打开一起读"><span class="life-chime"><i></i></span><span class="life-paper">一起读<small>12</small></span></button><button class="life-note" type="button" data-life-feature="watch" aria-label="打开共赏"><span class="life-chime"><i></i></span><span class="life-paper">共赏<small>13</small></span></button></div>
   </div>
   <div class="life-footer-note">风吹过时，纸条轻轻响。每一张都通往我们生活的一间小房间。</div>
   <div class="life-placeholder" id="life-placeholder" aria-hidden="true">
