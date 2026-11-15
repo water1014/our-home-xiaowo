@@ -3431,6 +3431,33 @@ html.dark #pg-life .life-placeholder-title{color:#d9e8ed}
 html.dark #pg-life .life-placeholder-copy{color:#9bb7c2}
 @media(prefers-reduced-motion:reduce){#pg-life .life-note,#pg-life .life-note .life-paper,#pg-life .life-rope{animation:none!important}}
 @media(max-width:360px){#pg-life{padding-left:.35rem!important;padding-right:.35rem!important}#pg-life .life-rope-row{min-height:12.2rem}#pg-life .life-note .life-paper{width:2.78rem;height:5.7rem;flex-basis:5.7rem;font-size:.75rem}}
+
+/* Suspension correction: each note hangs from a knot on the curve */
+#pg-life .life-note{height:11.25rem;justify-content:flex-start;transform-origin:50% 0}
+#pg-life .life-note:nth-child(2){margin-top:2.43rem}
+#pg-life .life-note:nth-child(3){margin-top:2.98rem}
+#pg-life .life-note:nth-child(4){margin-top:2.43rem}
+#pg-life .life-rope-row:nth-of-type(2) .life-note:nth-child(2),
+#pg-life .life-rope-row:nth-of-type(3) .life-note:nth-child(2){margin-top:2.43rem}
+#pg-life .life-rope-row:nth-of-type(2) .life-note:nth-child(3),
+#pg-life .life-rope-row:nth-of-type(3) .life-note:nth-child(3){margin-top:2.98rem}
+#pg-life .life-rope-row.four .life-note:nth-child(2),
+#pg-life .life-rope-row.four .life-note:nth-child(5){margin-top:1.30rem}
+#pg-life .life-rope-row.four .life-note:nth-child(3),
+#pg-life .life-rope-row.four .life-note:nth-child(4){margin-top:2.80rem}
+#pg-life .life-note:before{top:0!important;height:1.22rem!important;width:1px;background:linear-gradient(180deg,#a74450,#b85a61)!important;transform:translateX(-50%)}
+#pg-life .life-note:after{content:"";position:absolute;top:-2px;left:50%;width:5px;height:5px;border-radius:50%;background:#a74450;border:1px solid rgba(255,255,255,.85);box-shadow:0 0 0 1px rgba(167,68,80,.2);transform:translateX(-50%)}
+#pg-life .life-note .life-paper{margin-top:1.2rem!important;transform-origin:50% 0;animation:life-tag-follow 7.1s ease-in-out infinite}
+#pg-life .life-rope-row.four .life-note .life-paper{animation-duration:8.2s}
+html.dark #pg-life .life-note:before{background:linear-gradient(180deg,#d18a8d,#bd777c)!important}
+html.dark #pg-life .life-note:after{background:#d18a8d;border-color:#e7e9e1}
+@media(max-width:360px){
+ #pg-life .life-note:nth-child(2){margin-top:2.43rem}
+ #pg-life .life-note:nth-child(3){margin-top:2.98rem}
+ #pg-life .life-note:nth-child(4){margin-top:2.43rem}
+ #pg-life .life-rope-row.four .life-note:nth-child(2),#pg-life .life-rope-row.four .life-note:nth-child(5){margin-top:1.3rem}
+ #pg-life .life-rope-row.four .life-note:nth-child(3),#pg-life .life-rope-row.four .life-note:nth-child(4){margin-top:2.8rem}
+}
 </style>
 </head>
 <body>
