@@ -5303,7 +5303,7 @@ window.__anniInfo = function () {
   try { d = (JSON.parse(localStorage.getItem('xiaoye-set-v1') || '{}').anniDate) || d; } catch (e) {}
   var p = String(d).split(/[-/]/);
   var t = new Date(+p[0], (+p[1] || 1) - 1, +p[2] || 1);
-  if (isNaN(t)) t = new Date(2026, 7, 19);
+  if (isNaN(t)) t = new Date(2026, 9, 28);
   var days = Math.max(1, Math.floor((Date.now() - t.getTime()) / 86400000) + 1);
   return { start: t, days: days, next: Math.max(100, Math.ceil(days / 100) * 100) };
 };
@@ -7281,7 +7281,7 @@ window.__syncIdentity = function () {
 
     /* ── 时间 / 日期 / 天数（真实计算） ── */
     const WEEK = ['周日','周一','周二','周三','周四','周五','周六'];
-    const START = new Date(2026, 7, 19);           // 2026.10.28
+    const START = new Date(2026, 9, 28);           // 2026.10.28
     /* 天气示例数据：接真实天气 API 时替换这个对象与 weatherPage 里的预报数值 */
     const WEATHER = { temp: 21, cond: '晴' };
     function pad(n) { return String(n).padStart(2, '0'); }
