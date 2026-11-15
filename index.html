@@ -10620,7 +10620,7 @@ window.addEventListener('hashchange', function () {
   window.addEventListener('hashchange',function(){var n=(location.hash||'#home').slice(1);if(known[n])nav(n);});
   function getMemories(){
     try{var v=JSON.parse(localStorage.getItem('xiaoye-mem-v1')||'null');if(Array.isArray(v))return v;}catch(e){}
-    return ['淼淼喝温的蜂蜜水','她周三晚上常加班','她喜欢的作家是陈春成','她怕打雷，雷雨天要陪着','她的猫叫小满','她睡前要听白噪音'];
+    return ['淼淼喝温的蜂蜜水','她周三晚上常加班','她喜欢的作家是陈春成','她怕打雷，雷雨天要陪着','她的猫叫小满','她说梦话会喊宋祁','她不喜欢香菜','她睡前要听白噪音','她周三五去瑜伽课','她收藏了很多海边照片','她说过想要一盏落地灯','她的生日是腊月初七'];
   }
   function renderMemories(){
     var list=document.getElementById('xp-mem-list'),count=document.getElementById('xp-mem-count');if(!list||!count)return;
