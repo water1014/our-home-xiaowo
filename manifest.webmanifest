@@ -1,0 +1,25 @@
+{
+  "id": "./",
+  "name": "我们的小窝",
+  "short_name": "小窝",
+  "description": "只属于两个人的私人生活空间",
+  "lang": "zh-CN",
+  "start_url": "./#home",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "portrait",
+  "background_color": "#e8f7fb",
+  "theme_color": "#d6edf7",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
