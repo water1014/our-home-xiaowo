@@ -3376,46 +3376,51 @@ html.dark .xp-tile{background:linear-gradient(145deg,rgba(37,52,61,.9),rgba(21,3
 .xp-glyph{font-size:1.25rem;color:#6e9caf}
 .xp-empty{text-align:center;color:#8ba8b5;font:italic .75rem Georgia,serif;padding:1.4rem .5rem}
 
-/* Life: red thread + wind chimes */
-#pg-life{padding-top:calc(.75rem + env(safe-area-inset-top))!important}
-.life-cover{position:relative;min-height:13.4rem;overflow:hidden;border-radius:1.45rem;padding:1.05rem 1.1rem .95rem;background:linear-gradient(145deg,#f5f9f8 0%,#e5f0f2 52%,#d8e8ec 100%);border:1px solid rgba(255,255,255,.9);box-shadow:0 .65rem 1.7rem rgba(55,91,105,.1);color:#345463}
+/* Life: one red cord, many hanging chimes and paper notes */
+#pg-life{padding:calc(.7rem + env(safe-area-inset-top)) .9rem 1.2rem!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch;box-sizing:border-box}
+.life-cover{position:relative;min-height:9.6rem;overflow:hidden;border-radius:1.35rem;padding:1rem 1.05rem .9rem;background:linear-gradient(145deg,#f5f9f8 0%,#e5f0f2 52%,#d8e8ec 100%);border:1px solid rgba(255,255,255,.9);box-shadow:0 .65rem 1.7rem rgba(55,91,105,.1);color:#345463}
 html.dark .life-cover{background:linear-gradient(145deg,#243943,#1b303a 60%,#294653);border-color:rgba(255,255,255,.08);color:#e1edf2}
-.life-cover-top{display:flex;justify-content:space-between;font: .56rem Georgia,serif;letter-spacing:.17em;color:#7898a5}
-.life-title{font:600 1.55rem "Songti SC","Noto Serif SC",serif;letter-spacing:.08em;margin-top:1.05rem}
+.life-cover-top{display:flex;justify-content:space-between;font:.56rem Georgia,serif;letter-spacing:.17em;color:#7898a5}
+.life-title{font:600 1.45rem "Songti SC","Noto Serif SC",serif;letter-spacing:.08em;margin-top:.85rem}
 .life-subtitle{font-size:.68rem;color:#7898a5;margin-top:.32rem}
 html.dark .life-subtitle,html.dark .life-cover-top{color:#9bb7c2}
-.life-thread-art{position:absolute;right:-.2rem;top:1.9rem;width:8.7rem;height:5rem;opacity:.72;pointer-events:none}
-.life-thread-art:before{content:"";position:absolute;left:.4rem;right:.3rem;top:1.2rem;height:1px;background:#b85d65;transform:rotate(-13deg);box-shadow:0 0 0 1px rgba(184,93,101,.08)}
-.life-thread-art i{position:absolute;left:3.9rem;top:.5rem;width:1px;height:3.8rem;background:linear-gradient(#b85d65,#9dbbc4)}
-.life-thread-art b{position:absolute;left:3.35rem;top:2.05rem;font:1.5rem Georgia,serif;color:#b85d65}
-.life-thread-art em{position:absolute;left:3.55rem;top:3.35rem;font-style:normal;color:#7898a5}
-.life-days{display:flex;align-items:baseline;gap:.35rem;margin-top:1.05rem;color:#7898a5;font-size:.62rem}
-.life-days strong{font:600 1.65rem Georgia,serif;color:#426e82;margin-left:.2rem}
+.life-days{display:flex;align-items:baseline;gap:.35rem;margin-top:.8rem;color:#7898a5;font-size:.62rem}
+.life-days strong{font:600 1.5rem Georgia,serif;color:#426e82;margin-left:.2rem}
 html.dark .life-days strong{color:#c2e2eb}
 .life-days-note{margin-left:auto;font:italic .58rem Georgia,serif}
-.life-section-head{display:flex;flex-direction:column;gap:.22rem;margin:1.25rem .2rem .65rem}
-.life-section-head span{font: .53rem Georgia,serif;letter-spacing:.2em;color:#9aafb8}
-.life-section-head b{font:600 .95rem "Songti SC","Noto Serif SC",serif;color:#496b7a}
-html.dark .life-section-head b{color:#d5e5eb}
-.life-feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem}
-.life-feature{min-height:6.1rem;text-align:left;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;padding:.78rem .82rem;border:1px solid rgba(255,255,255,.92);border-radius:1rem;background:linear-gradient(145deg,rgba(255,255,255,.9),rgba(227,240,243,.72));box-shadow:0 .3rem .85rem rgba(55,91,105,.06);color:#456574}
-html.dark .life-feature{background:linear-gradient(145deg,rgba(42,60,69,.92),rgba(29,43,51,.9));border-color:rgba(255,255,255,.08);color:#d9e8ed}
-.life-feature-wide{grid-column:1/-1;min-height:4.65rem;flex-direction:row;align-items:center;justify-content:flex-start;gap:.75rem}
-.life-feature-icon{font:1.15rem Georgia,serif;color:#b45e68}
-.life-feature b,.life-bell-list b{display:block;font:600 .88rem "Songti SC","Noto Serif SC",serif}
-.life-feature small,.life-bell-list small{display:block;font-size:.59rem;color:#91a8b1;margin-top:.2rem}
-.life-feature i{font-style:normal;margin-left:auto;color:#9ab0b8}
-.life-bell-head{margin-top:1.35rem}
-.life-bell-list{border:1px solid rgba(255,255,255,.9);border-radius:1.05rem;overflow:hidden;background:rgba(255,255,255,.56);box-shadow:0 .35rem 1rem rgba(55,91,105,.05)}
-html.dark .life-bell-list{background:rgba(28,42,50,.76);border-color:rgba(255,255,255,.08)}
-.life-bell-list button{width:100%;display:flex;align-items:center;gap:.75rem;text-align:left;padding:.76rem .85rem;border:0;background:transparent;color:inherit}
-.life-bell-list button+button{border-top:1px solid rgba(157,187,196,.2)}
-.life-bell-symbol{width:2rem;height:2rem;flex:0 0 2rem;display:grid;place-items:center;border-radius:50%;background:rgba(213,233,237,.55);color:#a65c66;font:1rem Georgia,serif}
-html.dark .life-bell-symbol{background:rgba(160,195,207,.1)}
-.life-bell-list button>span:nth-child(2){flex:1;min-width:0}
-.life-bell-list button>i{font-style:normal;color:#9ab0b8}
-.life-footer-note{text-align:center;padding:1rem .4rem .2rem;color:#94aab3;font:italic .62rem/1.8 Georgia,"Songti SC",serif;letter-spacing:.04em}
-.life-feature:active,.life-bell-list button:active{transform:scale(.985);opacity:.78}
+.life-cord-intro{display:flex;justify-content:space-between;align-items:center;margin:1.2rem .2rem .55rem;color:#7898a5}
+.life-cord-intro b{font:600 .9rem "Songti SC","Noto Serif SC",serif;color:#496b7a;letter-spacing:.08em}
+html.dark .life-cord-intro b{color:#d5e5eb}
+.life-cord-intro span{font:.53rem Georgia,serif;letter-spacing:.16em}
+.life-hanging-field{position:relative;padding:1.15rem .15rem .8rem;isolation:isolate}
+.life-hanging-field:before{content:"";position:absolute;z-index:-1;left:.15rem;right:.15rem;top:.55rem;height:2px;border-radius:50%;background:linear-gradient(90deg,#a94f5b,#d28b8e 45%,#a94f5b);box-shadow:0 1px 2px rgba(139,55,65,.18);transform:rotate(-1.2deg)}
+.life-hanging-field:after{content:"";position:absolute;z-index:-1;left:0;right:0;top:.48rem;height:1.4rem;border-top:1px solid rgba(184,93,101,.18);border-radius:50%}
+.life-note-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:.85rem;row-gap:.55rem}
+.life-note{position:relative;min-width:0;min-height:7.25rem;padding:1.45rem .5rem .55rem;border:0;background:transparent;color:#456574;display:flex;flex-direction:column;align-items:center;text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
+html.dark .life-note{color:#d9e8ed}
+.life-note:before{content:"";position:absolute;top:-.55rem;left:50%;height:1.55rem;width:1px;background:linear-gradient(#b85d65,#c7a1a2)}
+.life-note:after{content:"";position:absolute;top:.82rem;left:calc(50% - .32rem);width:.64rem;height:.64rem;border:1px solid #b85d65;border-radius:50% 50% 45% 45%;background:linear-gradient(145deg,#f8eeee,#d9aeb0);box-shadow:0 .12rem .3rem rgba(130,65,73,.12)}
+.life-chime{position:relative;margin-top:.05rem;width:1.55rem;height:1.1rem;display:block}
+.life-chime:before{content:"";position:absolute;left:50%;top:0;height:.62rem;width:1px;background:#b85d65}
+.life-chime:after{content:"";position:absolute;left:calc(50% - .38rem);top:.48rem;width:.76rem;height:.55rem;border:1px solid #b8757a;border-radius:.2rem .2rem .48rem .48rem;background:linear-gradient(145deg,#f6e8e8,#d9b6b7);box-shadow:0 .1rem .22rem rgba(130,65,73,.12)}
+.life-paper{position:relative;width:100%;max-width:9.3rem;min-height:3.45rem;margin-top:.15rem;padding:.72rem .5rem .5rem;border:1px solid rgba(190,166,151,.35);border-radius:.12rem .12rem .38rem .12rem;background:linear-gradient(145deg,rgba(255,253,247,.96),rgba(245,239,226,.94));box-shadow:0 .35rem .75rem rgba(71,83,85,.09);color:#6d6260;transform:rotate(-1deg);display:flex;align-items:center;justify-content:center;font:600 .82rem "Songti SC","Noto Serif SC",serif;letter-spacing:.06em}
+.life-note:nth-child(4n+2) .life-paper{transform:rotate(1.3deg)}
+.life-note:nth-child(3n) .life-paper{transform:rotate(-.4deg)}
+html.dark .life-paper{background:linear-gradient(145deg,#e8e0d3,#d9d0c2);color:#625b56;border-color:rgba(255,255,255,.18)}
+.life-paper small{position:absolute;right:.3rem;bottom:.16rem;font: .46rem Georgia,serif;color:#b58d8c;letter-spacing:.08em}
+.life-note:active{transform:translateY(.12rem);opacity:.76}
+.life-footer-note{text-align:center;padding:.6rem .4rem .4rem;color:#94aab3;font:italic .62rem/1.8 Georgia,"Songti SC",serif;letter-spacing:.04em}
+.life-placeholder{position:absolute;inset:0;z-index:8;display:none;flex-direction:column;overflow:hidden;background:var(--u-bg,linear-gradient(180deg,#d6edf7,#e8f7fb));padding:calc(.7rem + env(safe-area-inset-top)) 1rem 1rem;box-sizing:border-box}
+.life-placeholder.show{display:flex}
+.life-placeholder-back{align-self:flex-start;border:0;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.7);border-radius:2rem;padding:.48rem .8rem;color:#496b7a;font: .72rem -apple-system,BlinkMacSystemFont,sans-serif}
+.life-placeholder-content{margin:auto 0;text-align:center;padding:2rem 1rem}
+.life-placeholder-kicker{font:.55rem Georgia,serif;letter-spacing:.2em;color:#91aab4}
+.life-placeholder-title{font:600 1.7rem "Songti SC","Noto Serif SC",serif;color:#456574;margin-top:.9rem}
+.life-placeholder-mark{width:3.6rem;height:3.6rem;margin:1.2rem auto;border:1px solid rgba(184,93,101,.45);border-radius:50%;display:grid;place-items:center;color:#b85d65;font:1.3rem Georgia,serif}
+.life-placeholder-copy{font:.72rem/1.9 -apple-system,BlinkMacSystemFont,sans-serif;color:#8ba4af}
+html.dark .life-placeholder-title{color:#d9e8ed}
+html.dark .life-placeholder-copy{color:#9bb7c2}
+@media(min-width:480px){.life-note-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
 </style>
 </head>
@@ -5321,38 +5326,45 @@ html.dark .life-bell-symbol{background:rgba(160,195,207,.1)}
 </section>
 <section class="pg" id="pg-life" aria-label="生活">
   <div class="life-cover">
-    <div class="life-cover-top"><span>OUR LITTLE LIFE</span><span>红绳 · 风铃</span></div>
+    <div class="life-cover-top"><span>OUR LITTLE LIFE</span><span>RED THREAD · WIND CHIMES</span></div>
     <div class="life-title">把日子，系在一起。</div>
-    <div class="life-subtitle">有些事慢慢记，有些声音轻轻响。</div>
-    <div class="life-thread-art" aria-hidden="true"><i></i><b>⌁</b><em>◦</em></div>
+    <div class="life-subtitle">一根红绳，挂起我们生活里的小纸条。</div>
     <div class="life-days"><span>我们一起经过</span><strong id="xp-days-count">—</strong><small>天</small><span class="life-days-note">从 2026.10.28 开始</span></div>
   </div>
-  <div class="life-section-head"><span>THE THREAD</span><b>把生活认真收好</b></div>
-  <div class="life-feature-grid">
-    <button class="life-feature life-feature-wide" type="button" data-life-feature="diary"><span class="life-feature-icon">✎</span><span><b>日记</b><small>写下今天，也写下我们</small></span><i>↗</i></button>
-    <button class="life-feature" type="button" data-life-feature="health"><span class="life-feature-icon">♡</span><b>健康</b><small>身体与状态</small></button>
-    <button class="life-feature" type="button" data-life-feature="cycle"><span class="life-feature-icon">◒</span><b>生理期</b><small>温柔记录周期</small></button>
-    <button class="life-feature" type="button" data-life-feature="calendar"><span class="life-feature-icon">▦</span><b>日历</b><small>重要的日子</small></button>
-    <button class="life-feature" type="button" data-life-feature="plans"><span class="life-feature-icon">⌁</span><b>安排</b><small>一起计划日常</small></button>
-    <button class="life-feature" type="button" data-life-feature="study"><span class="life-feature-icon">⌑</span><b>学习</b><small>一点点向前</small></button>
+  <div class="life-cord-intro"><b>绳上的小风铃</b><span>OUR LITTLE THINGS</span></div>
+  <div class="life-hanging-field">
+    <div class="life-note-grid">
+      <button class="life-note" type="button" data-life-feature="diary" aria-label="打开日记"><span class="life-chime"></span><span class="life-paper">日记<small>01</small></span></button>
+      <button class="life-note" type="button" data-life-feature="health" aria-label="打开健康"><span class="life-chime"></span><span class="life-paper">健康<small>02</small></span></button>
+      <button class="life-note" type="button" data-life-feature="cycle" aria-label="打开生理期"><span class="life-chime"></span><span class="life-paper">生理期<small>03</small></span></button>
+      <button class="life-note" type="button" data-life-feature="abyss" aria-label="打开深渊区"><span class="life-chime"></span><span class="life-paper">深渊区<small>04</small></span></button>
+      <button class="life-note" type="button" data-life-feature="games" aria-label="打开游戏"><span class="life-chime"></span><span class="life-paper">游戏<small>05</small></span></button>
+      <button class="life-note" type="button" data-life-feature="calendar" aria-label="打开日历"><span class="life-chime"></span><span class="life-paper">日历<small>06</small></span></button>
+      <button class="life-note" type="button" data-life-feature="plans" aria-label="打开安排"><span class="life-chime"></span><span class="life-paper">安排<small>07</small></span></button>
+      <button class="life-note" type="button" data-life-feature="study" aria-label="打开学习"><span class="life-chime"></span><span class="life-paper">学习<small>08</small></span></button>
+      <button class="life-note" type="button" data-life-feature="drawer" aria-label="打开抽屉"><span class="life-chime"></span><span class="life-paper">抽屉<small>09</small></span></button>
+      <button class="life-note" type="button" data-life-feature="drift" aria-label="打开偏航"><span class="life-chime"></span><span class="life-paper">偏航<small>10</small></span></button>
+      <button class="life-note" type="button" data-life-feature="music" aria-label="打开音乐"><span class="life-chime"></span><span class="life-paper">音乐<small>11</small></span></button>
+      <button class="life-note" type="button" data-life-feature="reading" aria-label="打开一起读"><span class="life-chime"></span><span class="life-paper">一起读<small>12</small></span></button>
+      <button class="life-note" type="button" data-life-feature="watch" aria-label="打开共赏"><span class="life-chime"></span><span class="life-paper">共赏<small>13</small></span></button>
+    </div>
   </div>
-  <div class="life-section-head life-bell-head"><span>THE BELLS</span><b>留一些自由的回响</b></div>
-  <div class="life-bell-list">
-    <button type="button" data-life-feature="abyss"><span class="life-bell-symbol">☾</span><span><b>深渊区</b><small>留给不必解释的情绪与夜晚</small></span><i>↗</i></button>
-    <button type="button" data-life-feature="games"><span class="life-bell-symbol">♧</span><span><b>游戏</b><small>一起玩点什么</small></span><i>↗</i></button>
-    <button type="button" data-life-feature="drawer"><span class="life-bell-symbol">▤</span><span><b>抽屉</b><small>把零碎的小东西收起来</small></span><i>↗</i></button>
-    <button type="button" data-life-feature="drift"><span class="life-bell-symbol">⌁</span><span><b>偏航</b><small>偶尔离开既定路线</small></span><i>↗</i></button>
-    <button type="button" data-life-feature="music"><span class="life-bell-symbol">♫</span><span><b>音乐</b><small>共享正在播放的声音</small></span><i>↗</i></button>
-    <button type="button" data-life-feature="reading"><span class="life-bell-symbol">▧</span><span><b>一起读</b><small>共读一本书，留下批注</small></span><i>↗</i></button>
-    <button type="button" data-life-feature="watch"><span class="life-bell-symbol">◉</span><span><b>共赏</b><small>一起看见同一片风景</small></span><i>↗</i></button>
+  <div class="life-footer-note">风吹过时，纸条轻轻响。每一张都通往我们生活的一间小房间。</div>
+  <div class="life-placeholder" id="life-placeholder" aria-hidden="true">
+    <button class="life-placeholder-back" type="button" id="life-placeholder-back">‹ 返回生活</button>
+    <div class="life-placeholder-content">
+      <div class="life-placeholder-kicker">A LITTLE ROOM IN OUR LIFE</div>
+      <div class="life-placeholder-title" id="life-placeholder-title">日记</div>
+      <div class="life-placeholder-mark">⌁</div>
+      <div class="life-placeholder-copy">这间小房间还在布置中。<br>先把位置留在这里，之后再慢慢添上功能。</div>
+    </div>
   </div>
-  <div class="life-footer-note">红绳牵着彼此，风铃收着日常。这里还会慢慢长出新的房间。</div>
 </section>
 
 <nav class="tabbar" aria-label="主导航">
   <a class="tab-item" data-nav="chat"><svg class="ic"><use href="#i-chat"/></svg><span>小窝</span></a>
   <a class="tab-item" data-nav="memo"><svg class="ic"><use href="#i-memory"/></svg><span>记忆</span></a>
-  <a class="tab-item tab-home" data-nav="home"><span class="tab-orb"><svg class="ic"><use href="#i-home"/></svg></span><span>首页</span></a>
+  <a class="tab-item tab-home" data-nav="home"><span class="tab-orb"><svg class="ic"><use href="#i-home"/></svg></span><span>主页</span></a>
   <a class="tab-item" data-nav="life"><svg class="ic"><use href="#i-grid"/></svg><span>生活</span></a>
   <a class="tab-item" data-nav="mine"><svg class="ic"><use href="#i-user"/></svg><span>我的</span></a>
 </nav>
@@ -10800,5 +10812,30 @@ window.addEventListener('hashchange', function () {
   window.addEventListener('appinstalled',function(){installEvent=null;window.dispatchEvent(new CustomEvent('xiaowo:installed'));});
 })();
 </script>
+
+<script id="xiaowo-life-placeholder">
+(function(){
+  var root=document.getElementById('pg-life');
+  if(!root)return;
+  var overlay=document.getElementById('life-placeholder');
+  var title=document.getElementById('life-placeholder-title');
+  var back=document.getElementById('life-placeholder-back');
+  root.querySelectorAll('[data-life-feature]').forEach(function(item){
+    item.addEventListener('click',function(){
+      var label=item.querySelector('.life-paper');
+      title.textContent=label?label.childNodes[0].textContent.trim():item.getAttribute('data-life-feature');
+      overlay.classList.add('show');
+      overlay.setAttribute('aria-hidden','false');
+    });
+  });
+  function close(){
+    overlay.classList.remove('show');
+    overlay.setAttribute('aria-hidden','true');
+  }
+  back.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&overlay.classList.contains('show'))close();});
+})();
+</script>
+
 </body>
 </html>
