@@ -10528,6 +10528,8 @@ window.addEventListener('hashchange', function () {
   window.addEventListener('load', syncSettings);
   document.addEventListener('click', function(){ setTimeout(syncSettings, 0); }, true);
   window.addEventListener('storage', syncSettings);
+  /* 同一标签页里的 localStorage 写入不会触发原生 storage 事件，统一桥接层会补发此事件。 */
+  window.addEventListener('xiaowo:store-change', syncSettings);
 
   /* 用统一风格的小提示取代系统弹窗 */
   function toast(msg){
@@ -10676,7 +10678,12 @@ window.addEventListener('hashchange', function () {
     if((location.hash||'').slice(1)==='memo'||(location.hash||'').slice(1)==='life')nav(location.hash.slice(1));
     renderMemories();renderDays();
   });
-  window.addEventListener('storage',function(e){if(e.key==='xiaoye-mem-v1'&&document.getElementById('pg-memo').classList.contains('on'))renderMemories();});
+  function onMemoryStorageChange(e){
+    var key=e&&e.detail?e.detail.key:(e?e.key:null);
+    if((key==='xiaoye-mem-v1'||key===null)&&document.getElementById('pg-memo').classList.contains('on'))renderMemories();
+  }
+  window.addEventListener('storage',onMemoryStorageChange);
+  window.addEventListener('xiaowo:store-change',onMemoryStorageChange);
   window.XiaowoPages={renderMemories:renderMemories,renderDays:renderDays,go:nav};
 })();
 </script>
