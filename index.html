@@ -10902,6 +10902,42 @@ window.addEventListener('hashchange', function () {
 })();
 </script>
 
+
+<script id="xiaowo-app-core">
+/* Shared app services. Existing xiaoye-* storage keys are intentionally preserved. */
+(function(){
+  'use strict';
+  var EVENT='xiaowo:store-change', proto=Storage.prototype;
+  if(!proto.__xiaowoPatched){
+    var set=proto.setItem,remove=proto.removeItem,clear=proto.clear;
+    proto.setItem=function(k,v){set.call(this,k,v);if(this===localStorage)dispatch('set',k,v);};
+    proto.removeItem=function(k){remove.call(this,k);if(this===localStorage)dispatch('remove',k);};
+    proto.clear=function(){clear.call(this);if(this===localStorage)dispatch('clear',null);};
+    function dispatch(action,key,value){window.dispatchEvent(new CustomEvent(EVENT,{detail:{action:action,key:key==null?null:String(key),value:value==null?undefined:String(value)}}));}
+    Object.defineProperty(proto,'__xiaowoPatched',{value:true});
+  }
+  window.XiaowoStore={
+    get:function(k,fallback){try{var v=localStorage.getItem(k);return v===null?fallback:v;}catch(e){return fallback;}},
+    getJSON:function(k,fallback){try{var v=localStorage.getItem(k);return v===null?fallback:JSON.parse(v);}catch(e){return fallback;}},
+    set:function(k,v){localStorage.setItem(k,v);},
+    setJSON:function(k,v){localStorage.setItem(k,JSON.stringify(v));},
+    remove:function(k){localStorage.removeItem(k);},
+    subscribe:function(fn){window.addEventListener(EVENT,fn);window.addEventListener('storage',fn);return function(){window.removeEventListener(EVENT,fn);window.removeEventListener('storage',fn);};}
+  };
+  window.addEventListener('DOMContentLoaded',function(){
+    if('serviceWorker' in navigator && /^https?:$/.test(location.protocol)){
+      navigator.serviceWorker.register('./sw.js',{scope:'./',updateViaCache:'none'}).then(function(reg){reg.update().catch(function(){});}).catch(function(e){console.warn('[小窝] 离线缓存注册失败',e);});
+    }
+  });
+  var installEvent=null;
+  window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();installEvent=e;window.dispatchEvent(new CustomEvent('xiaowo:install-available'));});
+  window.XiaowoInstall={
+    available:function(){return !!installEvent;},
+    prompt:async function(){if(!installEvent)return false;var e=installEvent;installEvent=null;await e.prompt();return (await e.userChoice).outcome==='accepted';}
+  };
+  window.addEventListener('appinstalled',function(){installEvent=null;window.dispatchEvent(new CustomEvent('xiaowo:installed'));});
+})();
+</script>
 <script id="xiaowo-global-integration">
 /* 小窝全站联动：我的设定是全站的唯一来源，页面只负责呈现 */
 (function(){
@@ -10986,41 +11022,6 @@ window.addEventListener('hashchange', function () {
   window.addEventListener('load',function(){refresh(null);});
   document.addEventListener('visibilitychange',function(){if(!document.hidden)refresh(null);});
   refresh(null);
-})();
-</script>
-<script id="xiaowo-app-core">
-/* Shared app services. Existing xiaoye-* storage keys are intentionally preserved. */
-(function(){
-  'use strict';
-  var EVENT='xiaowo:store-change', proto=Storage.prototype;
-  if(!proto.__xiaowoPatched){
-    var set=proto.setItem,remove=proto.removeItem,clear=proto.clear;
-    proto.setItem=function(k,v){set.call(this,k,v);if(this===localStorage)dispatch('set',k,v);};
-    proto.removeItem=function(k){remove.call(this,k);if(this===localStorage)dispatch('remove',k);};
-    proto.clear=function(){clear.call(this);if(this===localStorage)dispatch('clear',null);};
-    function dispatch(action,key,value){window.dispatchEvent(new CustomEvent(EVENT,{detail:{action:action,key:key==null?null:String(key),value:value==null?undefined:String(value)}}));}
-    Object.defineProperty(proto,'__xiaowoPatched',{value:true});
-  }
-  window.XiaowoStore={
-    get:function(k,fallback){try{var v=localStorage.getItem(k);return v===null?fallback:v;}catch(e){return fallback;}},
-    getJSON:function(k,fallback){try{var v=localStorage.getItem(k);return v===null?fallback:JSON.parse(v);}catch(e){return fallback;}},
-    set:function(k,v){localStorage.setItem(k,v);},
-    setJSON:function(k,v){localStorage.setItem(k,JSON.stringify(v));},
-    remove:function(k){localStorage.removeItem(k);},
-    subscribe:function(fn){window.addEventListener(EVENT,fn);window.addEventListener('storage',fn);return function(){window.removeEventListener(EVENT,fn);window.removeEventListener('storage',fn);};}
-  };
-  window.addEventListener('DOMContentLoaded',function(){
-    if('serviceWorker' in navigator && /^https?:$/.test(location.protocol)){
-      navigator.serviceWorker.register('./sw.js',{scope:'./',updateViaCache:'none'}).then(function(reg){reg.update().catch(function(){});}).catch(function(e){console.warn('[小窝] 离线缓存注册失败',e);});
-    }
-  });
-  var installEvent=null;
-  window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();installEvent=e;window.dispatchEvent(new CustomEvent('xiaowo:install-available'));});
-  window.XiaowoInstall={
-    available:function(){return !!installEvent;},
-    prompt:async function(){if(!installEvent)return false;var e=installEvent;installEvent=null;await e.prompt();return (await e.userChoice).outcome==='accepted';}
-  };
-  window.addEventListener('appinstalled',function(){installEvent=null;window.dispatchEvent(new CustomEvent('xiaowo:installed'));});
 })();
 </script>
 
