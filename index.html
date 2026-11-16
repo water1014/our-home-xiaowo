@@ -5895,6 +5895,8 @@ window.__syncIdentity = function () {
         css: `radial-gradient(ellipse 80% 50% at 30% 0%, rgba(201,237,247,0.5), transparent 60%), linear-gradient(180deg, #f2f9fc 0%, #ffffff 100%)`
       }
     };
+    /* 暴露同一份壁纸表，供全站主题同步层读取 */
+    window.WALLPAPERS = WALLPAPERS;
 
     function applyWallpaper() {
       const v = localStorage.getItem('xiaoye-wallpaper') || 'shui';
@@ -10688,7 +10690,9 @@ window.addEventListener('hashchange', function () {
       cbg = JSON.parse(localStorage.getItem('xiaoye-chatbg-v1') || 'null');
     } catch (e) {}
     var WP = window.WALLPAPERS || {};
-    if (wp && wp !== 'shui' && wp !== 'mono' && WP[wp] && WP[wp].css){
+    if (wp && wp.indexOf('data:') === 0){
+      vals['--u-bg-set'] = 'url("' + wp.replace(/"/g, '%22') + '") center / cover no-repeat fixed';
+    } else if (wp && wp !== 'shui' && wp !== 'mono' && WP[wp] && WP[wp].css){
       vals['--u-bg-set'] = WP[wp].css;
     } else if (cbg && cbg.mode === 'custom'){
       if (cbg.url) vals['--u-bg-set'] = 'url(' + cbg.url + ') center / cover no-repeat fixed';
@@ -10952,5 +10956,39 @@ window.addEventListener('hashchange', function () {
 })();
 </script>
 
+
+<style id="xiaowo-global-wallpaper-and-home-polish">
+/* 全局壁纸：所有主页面共享同一张底，不再局限于聊天页 */
+html body .pg{background:var(--u-bg-set,linear-gradient(180deg,#d6edf7,#e8f7fb))!important;background-attachment:fixed!important;}
+html body #pg-home{background:var(--u-bg-set,linear-gradient(180deg,#d6edf7,#e8f7fb))!important;}
+html.dark body .pg{background:var(--u-bg-set,linear-gradient(180deg,#10181e,#0c1216))!important;}
+/* 首页：轻一点的头部、明确的纪念主视觉、统一组件呼吸感 */
+#pg-home .main{padding-left:1.02rem;padding-right:1.02rem;padding-bottom:calc(1.15rem + env(safe-area-inset-bottom));}
+#pg-home .head-row{min-height:2rem;padding:.18rem .08rem .12rem;}
+#pg-home .clock .time{letter-spacing:.015em;text-shadow:0 1px 14px rgba(111,164,185,.12);}
+#pg-home .weather-chip{border:1px solid rgba(255,255,255,.58);border-radius:2rem;padding:.28rem .55rem;background:rgba(255,255,255,.28);backdrop-filter:blur(.7rem);}
+#pg-home .anniv{margin-top:1.05rem;padding:.95rem .9rem .82rem;border-radius:1.35rem;background:linear-gradient(155deg,rgba(255,255,255,.78),rgba(225,242,249,.58));border-color:rgba(255,255,255,.88);box-shadow:0 .55rem 1.45rem rgba(46,74,86,.085),inset 0 1px 0 rgba(255,255,255,.96);}
+#pg-home .an-pair{gap:.52rem;}
+#pg-home .an-face{width:3.28rem;height:3.28rem;box-shadow:0 .38rem 1rem rgba(46,74,86,.12),inset 0 1px 0 rgba(255,255,255,.96);}
+#pg-home .an-heart{width:1.08rem;height:1.08rem;color:#c58f9e;}
+#pg-home .an-names{margin-top:.62rem;font-size:1.02rem;letter-spacing:.16em;}
+#pg-home .an-stats{gap:2rem;margin-top:.72rem;}
+#pg-home .an-stat b{font-size:1.52rem;}
+#pg-home .anniv .an-track{width:58%;margin-top:.65rem;}
+#pg-home .widgets{gap:.7rem;margin-top:1.05rem;}
+#pg-home .music-bar,#pg-home .widget{border-radius:1.18rem;}
+#pg-home .music-bar{padding:.78rem .86rem;}
+#pg-home .widget{padding:.76rem;}
+#pg-home .album{margin-top:1.05rem!important;padding:.78rem .76rem .82rem!important;border-radius:1.3rem!important;}
+#pg-home .album-head{padding:0 .08rem;}
+#pg-home .line{padding-top:.78rem;padding-bottom:.82rem;}
+#pg-home .line-card{flex-basis:5.85rem;}
+#pg-home .lc-paper{border-radius:.18rem;box-shadow:0 .2rem .65rem rgba(46,74,86,.15),0 .02rem .08rem rgba(46,74,86,.08);}
+#pg-home .foot-note{padding-bottom:.55rem!important;}
+html.dark #pg-home .anniv{background:linear-gradient(155deg,rgba(40,49,55,.82),rgba(25,34,40,.72));border-color:rgba(240,242,244,.13);}
+html.dark #pg-home .weather-chip{background:rgba(22,32,39,.52);border-color:rgba(255,255,255,.12);}
+@media(max-height:43rem){#pg-home .anniv{margin-top:.72rem;padding:.72rem .8rem .65rem;}#pg-home .widgets,#pg-home .album{margin-top:.78rem!important;}#pg-home .an-face{width:2.85rem;height:2.85rem;}}
+@media(prefers-reduced-motion:reduce){#pg-home .reveal,#pg-home .person .avatar{animation:none!important;}}
+</style>
 </body>
 </html>
