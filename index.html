@@ -10480,7 +10480,7 @@ Object.keys(window.__xyBridge).forEach(function (k) {
 })();</script>
 
 <script>
-window.xwUpdateLoveDays=function(){var el=document.getElementById('xwLoveDays');if(!el)return;var start=new Date(2026,9,28);var today=new Date();today.setHours(0,0,0,0);el.textContent=Math.max(1,Math.floor((today-start)/86400000)+1);};
+window.xwUpdateLoveDays=function(){var el=document.getElementById('xwLoveDays');if(!el)return;var a=window.XiaowoApp&&window.XiaowoApp.getAnniversary?window.XiaowoApp.getAnniversary():window.__anniInfo();el.textContent=a.days;};
 window.xwShowHub=function(){if(window.xwUpdateLoveDays)window.xwUpdateLoveDays();document.getElementById('xiaowoHub').style.display='flex';document.getElementById('xiaowoFeed').style.display='none';document.getElementById('xiaowoFavorites').style.display='none';document.getElementById('chatHome').style.display='none';document.querySelector('#pg-chat .app').style.display='none';};
 window.xwOpenChat=function(){document.getElementById('xiaowoHub').style.display='none';document.getElementById('xiaowoFeed').style.display='none';document.getElementById('xiaowoFavorites').style.display='none';document.getElementById('chatHome').style.display='flex';document.querySelector('#pg-chat .app').style.display='flex';};
 window.xwOpenFeed=function(){document.getElementById('xiaowoHub').style.display='none';document.getElementById('chatHome').style.display='none';document.querySelector('#pg-chat .app').style.display='none';document.getElementById('xiaowoFeed').style.display='flex';xwRenderFeed();};
@@ -10854,8 +10854,8 @@ window.addEventListener('hashchange', function () {
   }
   function renderDays(){
     var el=document.getElementById('xp-days-count');if(!el)return;
-    var start=new Date(2026,9,28);var today=new Date();today.setHours(0,0,0,0);
-    el.textContent=Math.max(1,Math.floor((today-start)/86400000)+1);
+    var a=window.XiaowoApp&&window.XiaowoApp.getAnniversary?window.XiaowoApp.getAnniversary():window.__anniInfo();
+    el.textContent=a.days;
   }
   function openLegacy(view){
     var allowed={world:1,console:1,beauty:1,settings:1,mcp:1};
