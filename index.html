@@ -10910,7 +10910,7 @@ window.addEventListener('hashchange', function () {
   };
   window.addEventListener('DOMContentLoaded',function(){
     if('serviceWorker' in navigator && /^https?:$/.test(location.protocol)){
-      navigator.serviceWorker.register('./sw.js',{scope:'./'}).catch(function(e){console.warn('[小窝] 离线缓存注册失败',e);});
+      navigator.serviceWorker.register('./sw.js',{scope:'./',updateViaCache:'none'}).then(function(reg){reg.update().catch(function(){});}).catch(function(e){console.warn('[小窝] 离线缓存注册失败',e);});
     }
   });
   var installEvent=null;
