@@ -3485,34 +3485,84 @@ html.dark #pg-life .life-note:after{background:#d18a8d;border-color:#e7e9e1}
 
 
 <style id="xiaowo-hub-style">
-#pg-chat #xiaowoHub,#pg-chat #xiaowoFeed,#pg-chat #xiaowoFavorites{position:fixed;inset:0;z-index:205;max-width:30rem;margin:0 auto;display:none;flex-direction:column;overflow:auto;padding:calc(1.1rem + env(safe-area-inset-top)) 1.2rem calc(6.2rem + env(safe-area-inset-bottom));background:radial-gradient(ellipse at 12% 0%,rgba(255,255,255,.9),transparent 48%),linear-gradient(160deg,#eaf5f7,#f7f8f4 72%,#e8f1ef);color:#49616a}
-html.dark #pg-chat #xiaowoHub,html.dark #pg-chat #xiaowoFeed,html.dark #pg-chat #xiaowoFavorites{background:linear-gradient(160deg,#1c2b32,#20282b 75%,#202b2b);color:#dce8e7}
-#pg-chat #xiaowoHub{display:flex}
-#pg-chat .xw-kicker{font: .62rem Georgia,serif;letter-spacing:.28em;color:#91aeb6}
-#pg-chat .xw-heading{font:2rem "Songti SC","Noto Serif SC",serif;letter-spacing:.12em;margin:.5rem 0 .35rem;color:#45616d}
-html.dark #pg-chat .xw-heading{color:#e1eeee}
-#pg-chat .xw-sub{font-size:.72rem;letter-spacing:.08em;color:#8ba4aa}
-#pg-chat .xw-entry{display:flex;align-items:center;gap:1rem;padding:1.15rem 1.05rem;margin-top:.8rem;border:1px solid rgba(255,255,255,.86);border-radius:1.15rem;background:rgba(255,255,255,.57);box-shadow:0 8px 24px rgba(70,105,112,.055);text-align:left;color:inherit}
-html.dark #pg-chat .xw-entry{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.1)}
-#pg-chat .xw-entry-mark{width:2.7rem;height:2.7rem;display:grid;place-items:center;border-radius:50%;background:rgba(177,211,216,.28);font:1.2rem Georgia,serif;color:#7599a1;flex:none}
-#pg-chat .xw-entry strong{display:block;font:1.02rem "Songti SC","Noto Serif SC",serif;letter-spacing:.12em}
-#pg-chat .xw-entry small{display:block;margin-top:.3rem;font-size:.65rem;color:#91a6aa;letter-spacing:.04em}
-#pg-chat .xw-arrow{margin-left:auto;color:#9db5b8;font-size:1.1rem}
-#pg-chat .xw-back{align-self:flex-start;border:0;background:transparent;color:inherit;padding:.25rem 0 .9rem;font: .78rem "Songti SC",serif}
-#pg-chat .xw-compose{width:100%;min-height:5.2rem;margin:1rem 0 .5rem;padding:.85rem;border:1px solid rgba(130,166,172,.25);border-radius:.85rem;background:rgba(255,255,255,.62);font: .82rem/1.7 sans-serif;color:inherit;resize:vertical}
+#pg-chat #xiaowoHub,#pg-chat #xiaowoFeed,#pg-chat #xiaowoFavorites{position:fixed;inset:0;z-index:205;max-width:30rem;margin:0 auto;display:none;flex-direction:column;overflow:auto;padding:calc(1rem + env(safe-area-inset-top)) 1.05rem calc(6.2rem + env(safe-area-inset-bottom));background:radial-gradient(ellipse 78% 40% at 50% -5%,rgba(255,255,255,.96),transparent 72%),radial-gradient(ellipse 55% 38% at 100% 25%,rgba(176,202,216,.22),transparent 75%),linear-gradient(160deg,#dce8ee 0%,#edf2f3 48%,#e4edf0 100%);color:#536b79;scrollbar-width:none}
+#pg-chat #xiaowoHub::-webkit-scrollbar,#pg-chat #xiaowoFeed::-webkit-scrollbar,#pg-chat #xiaowoFavorites::-webkit-scrollbar{display:none}
+html.dark #pg-chat #xiaowoHub,html.dark #pg-chat #xiaowoFeed,html.dark #pg-chat #xiaowoFavorites{background:linear-gradient(160deg,#1b2932,#202c33 70%,#1a252c);color:#e0e9ed}
+#pg-chat #xiaowoHub{display:flex;gap:0}
+#pg-chat .xw-love-top{display:flex;justify-content:space-between;align-items:center;margin:.1rem .15rem .2rem}
+#pg-chat .xw-kicker{font:.58rem Georgia,serif;letter-spacing:.22em;color:#91a8b5}
+#pg-chat .xw-edition{font:.58rem Georgia,serif;letter-spacing:.12em;color:#9aafba}
+#pg-chat .xw-love-title{font:italic 2.35rem/1.1 Georgia,"Times New Roman",serif;letter-spacing:.01em;color:#6f8999;margin:.3rem 0 .45rem}
+#pg-chat .xw-love-title span{font-size:1.35rem;color:#9bb3c0}
+#pg-chat .xw-since{font: .76rem Georgia,"Songti SC",serif;letter-spacing:.12em;color:#8299a6}
+#pg-chat .xw-days{display:flex;align-items:baseline;gap:.42rem;margin:.65rem 0 .3rem;color:#7892a2}
+#pg-chat .xw-days strong{font:italic 2.45rem/1 Georgia,serif;font-weight:400;letter-spacing:.03em}
+#pg-chat .xw-days span{font:italic .95rem Georgia,serif;letter-spacing:.08em}
+#pg-chat .xw-love-note{font:.72rem "Songti SC","Noto Serif SC",serif;letter-spacing:.08em;color:#92a6b0;margin-bottom:.7rem}
+#pg-chat .xw-envelope-scene{position:relative;min-height:17.1rem;margin:.15rem -.1rem .15rem;display:flex;align-items:center;justify-content:center}
+#pg-chat .xw-envelope{position:relative;width:94%;height:12.1rem;border-radius:.35rem .35rem .65rem .65rem;background:linear-gradient(155deg,#fffefa 0%,#f4f3ed 52%,#e5ebeb 100%);border:1px solid rgba(255,255,255,.95);box-shadow:0 .75rem 1.5rem rgba(83,112,129,.15),inset 0 1px 0 #fff;transform:rotate(-2deg);overflow:visible}
+#pg-chat .xw-envelope:before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(145deg,transparent 49.5%,rgba(180,198,207,.24) 50%,transparent 50.7%),linear-gradient(35deg,transparent 49.5%,rgba(180,198,207,.18) 50%,transparent 50.7%);pointer-events:none}
+#pg-chat .xw-envelope:after{content:"";position:absolute;left:0;right:0;top:0;height:58%;background:linear-gradient(155deg,#fffefa,#edf0ed);clip-path:polygon(0 0,100% 0,50% 100%);border-bottom:1px solid rgba(180,198,207,.25);filter:drop-shadow(0 2px 2px rgba(90,120,140,.08));}
+#pg-chat .xw-envelope-caption{position:absolute;z-index:2;left:1rem;bottom:1rem;font:italic 1.15rem Georgia,serif;color:#8ca2ae;letter-spacing:.04em}
+#pg-chat .xw-envelope-caption small{display:block;margin-top:.25rem;font: .55rem Georgia,serif;letter-spacing:.22em;color:#a6b7bf}
+#pg-chat .xw-wax{position:absolute;z-index:4;left:50%;top:53%;transform:translate(-50%,-50%) rotate(2deg);width:3.35rem;height:3.35rem;border-radius:50%;display:grid;place-items:center;color:#f8f6ef;font:1.35rem Georgia,serif;background:radial-gradient(circle at 34% 28%,#c6d7df 0%,#8faaba 54%,#6f8fa1 100%);border:2px solid rgba(255,255,255,.62);box-shadow:0 .25rem .55rem rgba(75,105,125,.24),inset 0 1px 3px rgba(255,255,255,.7)}
+#pg-chat .xw-ribbon{position:absolute;z-index:5;width:5rem;height:.35rem;left:50%;top:53%;transform:translate(-50%,-50%) rotate(-2deg);border-radius:1rem;background:linear-gradient(90deg,#a9bfca,#e6edf0,#9bb4c2);opacity:.9}
+#pg-chat .xw-stamp{position:absolute;z-index:3;right:1.1rem;top:1rem;width:2.3rem;height:2.8rem;border:1px dashed #b9c9d0;display:grid;place-items:center;color:#8fa8b5;font:1rem Georgia,serif;transform:rotate(8deg);background:rgba(220,232,236,.35)}
+#pg-chat .xw-hangtag{position:absolute;z-index:7;right:.1rem;top:-.05rem;width:3.5rem;height:5.2rem;padding:.55rem .25rem .3rem;background:linear-gradient(145deg,#fdfcf7,#e8eef0);border:1px solid #fff;box-shadow:0 .25rem .65rem rgba(75,105,125,.13);clip-path:polygon(0 0,100% 0,100% 82%,50% 100%,0 82%);transform:rotate(7deg);display:flex;align-items:center;flex-direction:column;gap:.3rem;color:#7894a3}
+#pg-chat .xw-hangtag:before{content:"";width:.35rem;height:.35rem;border:1px solid #9db3bd;border-radius:50%;margin-bottom:.15rem}
+#pg-chat .xw-hangtag span{font:.53rem Georgia,serif;letter-spacing:.08em;writing-mode:vertical-rl}
+#pg-chat .xw-ticket{position:relative;margin:-.25rem .65rem .5rem;padding:.8rem .9rem .75rem;background:linear-gradient(110deg,#f8f7f1,#edf1ef);border:1px solid rgba(255,255,255,.95);box-shadow:0 .3rem .85rem rgba(78,105,121,.09);transform:rotate(1.2deg);display:flex;align-items:center;gap:.7rem}
+#pg-chat .xw-ticket:before,#pg-chat .xw-ticket:after{content:"";position:absolute;top:50%;width:.75rem;height:.75rem;border-radius:50%;background:#e8eff1;transform:translateY(-50%);border:1px solid rgba(190,205,211,.35)}
+#pg-chat .xw-ticket:before{left:-.42rem}#pg-chat .xw-ticket:after{right:-.42rem}
+#pg-chat .xw-ticket-mark{font:1.35rem Georgia,serif;color:#91aab8;border-right:1px dashed #c4d2d8;padding-right:.7rem}
+#pg-chat .xw-ticket-copy{flex:1;min-width:0}
+#pg-chat .xw-ticket-copy strong{display:block;font:italic 1.15rem Georgia,serif;color:#718b9b}
+#pg-chat .xw-ticket-copy small{display:block;margin-top:.18rem;font-size:.62rem;letter-spacing:.08em;color:#9aadb6}
+#pg-chat .xw-ticket-no{font:.55rem Georgia,serif;letter-spacing:.12em;color:#9aadb6;writing-mode:vertical-rl}
+#pg-chat .xw-entry-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin:.7rem .05rem .1rem}
+#pg-chat .xw-entry{position:relative;min-height:8.2rem;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:.4rem;padding:.85rem .85rem .75rem;border:1px solid rgba(255,255,255,.92);border-radius:.18rem .7rem .18rem .7rem;background:linear-gradient(145deg,rgba(255,255,255,.9),rgba(240,244,242,.86));box-shadow:0 .3rem .8rem rgba(77,107,125,.08);color:#657f8d;text-align:left;overflow:hidden;cursor:pointer}
+#pg-chat .xw-entry:active{transform:translateY(1px)}
+#pg-chat .xw-entry.chat-entry{grid-column:1/-1;min-height:6.2rem;flex-direction:row;align-items:center;padding:1rem 1.1rem}
+#pg-chat .xw-entry:after{content:"";position:absolute;right:-1.1rem;bottom:-1.45rem;width:4.3rem;height:4.3rem;border:1px solid rgba(143,170,184,.22);border-radius:50%}
+#pg-chat .xw-entry-mark{width:2.2rem;height:2.2rem;display:grid;place-items:center;border-radius:50%;background:linear-gradient(145deg,#e5edf0,#cbdce3);color:#7793a2;font:1.1rem Georgia,serif;flex:none;box-shadow:inset 0 1px 2px rgba(255,255,255,.9)}
+#pg-chat .xw-entry strong{display:block;font:italic 1.13rem Georgia,"Songti SC",serif;letter-spacing:.02em;color:#718b9a}
+#pg-chat .xw-entry small{display:block;margin-top:.2rem;font-size:.62rem;color:#9aadb6;letter-spacing:.04em}
+#pg-chat .xw-entry .xw-entry-arrow{margin-left:auto;color:#9aafba;font-size:1rem}
+#pg-chat .xw-entry .xw-entry-bottom{display:flex;align-items:center;justify-content:space-between;width:100%}
+#pg-chat .xw-entry.chat-entry .xw-entry-bottom{width:auto;display:block;flex:1;margin-left:.8rem}
+#pg-chat .xw-entry.chat-entry .xw-entry-mark{width:2.75rem;height:2.75rem;font-size:1.25rem}
+#pg-chat .xw-footer-note{text-align:center;margin:.85rem 0 .2rem;font:.56rem Georgia,serif;letter-spacing:.2em;color:#9aadb6}
+#pg-chat .xw-back{align-self:flex-start;border:0;background:transparent;color:inherit;padding:.25rem 0 .9rem;font:.78rem "Songti SC",serif}
+#pg-chat .xw-compose{width:100%;min-height:5.2rem;margin:1rem 0 .5rem;padding:.85rem;border:1px solid rgba(130,166,172,.25);border-radius:.85rem;background:rgba(255,255,255,.62);font:.82rem/1.7 sans-serif;color:inherit;resize:vertical}
 #pg-chat .xw-postbtn{align-self:flex-end;border:0;border-radius:2rem;padding:.55rem 1.15rem;background:#789ba2;color:white;font-size:.72rem}
 #pg-chat .xw-post{padding:1rem 0;border-bottom:1px solid rgba(130,166,172,.2)}
 #pg-chat .xw-post-meta{font-size:.65rem;color:#91a6aa;margin-bottom:.55rem}
 #pg-chat .xw-post-body{font:.86rem/1.8 "Songti SC","Noto Serif SC",serif;white-space:pre-wrap;overflow-wrap:anywhere}
 #pg-chat .xw-empty{padding:3rem 1rem;text-align:center;color:#91a6aa;font:.8rem/2 "Songti SC",serif}
+@media(max-height:740px){#pg-chat #xiaowoHub{padding-top:calc(.7rem + env(safe-area-inset-top))}#pg-chat .xw-envelope-scene{min-height:14.2rem}#pg-chat .xw-envelope{height:10.3rem}#pg-chat .xw-entry{min-height:7.2rem}}
+@media(min-width:480px){#pg-chat #xiaowoHub{padding-left:1.35rem;padding-right:1.35rem}}
 </style>
-<section id="xiaowoHub" aria-label="小窝">
- <div class="xw-kicker">OUR LITTLE PLACE · TWO OF US</div>
- <div class="xw-heading">小窝</div><div class="xw-sub">把日常留在这里。</div>
- <div style="height:1.25rem"></div>
- <button class="xw-entry" onclick="xwOpenChat()"><span class="xw-entry-mark">♡</span><span><strong>Chat · 聊天</strong><small>回到你和宋祁的对话</small></span><span class="xw-arrow">›</span></button>
- <button class="xw-entry" onclick="xwOpenFeed()"><span class="xw-entry-mark">⌁</span><span><strong>动态</strong><small>两个人的日常与小小分享</small></span><span class="xw-arrow">›</span></button>
- <button class="xw-entry" onclick="xwOpenFavorites()"><span class="xw-entry-mark">✧</span><span><strong>收藏</strong><small>你和宋祁珍藏的聊天片段</small></span><span class="xw-arrow">›</span></button>
+<section id="xiaowoHub" aria-label="Love">
+ <div class="xw-love-top"><span class="xw-kicker">A PRIVATE LITTLE WORLD</span><span class="xw-edition">YOU & SONG QI · 01</span></div>
+ <div class="xw-love-title">Love <span>♡</span></div>
+ <div class="xw-since">SINCE 2026.10.28</div>
+ <div class="xw-days"><strong id="xwLoveDays">--</strong><span>days together</span></div>
+ <div class="xw-love-note">一些日子，因为彼此而有了意义。</div>
+ <div class="xw-envelope-scene" aria-label="封存着两个人故事的信封">
+  <div class="xw-envelope">
+   <div class="xw-stamp">✿<br><small>POST</small></div>
+   <div class="xw-envelope-caption">You & Me ♡<small>SEALED WITH LOVE</small></div>
+   <div class="xw-ribbon"></div><div class="xw-wax">✿</div>
+  </div>
+  <div class="xw-hangtag"><span>OUR DAYS</span><span>日常</span></div>
+ </div>
+ <div class="xw-ticket"><span class="xw-ticket-mark">✧</span><div class="xw-ticket-copy"><strong>Little keepsakes</strong><small>留住那些不想遗忘的瞬间</small></div><span class="xw-ticket-no">NO. 001 · FOREVER</span></div>
+ <div class="xw-entry-grid">
+  <button class="xw-entry chat-entry" onclick="xwOpenChat()"><span class="xw-entry-mark">✉</span><span class="xw-entry-bottom"><span><strong>Chat</strong><small>回到我们的对话 · WRITE TO ME</small></span></span><span class="xw-entry-arrow">↗</span></button>
+  <button class="xw-entry" onclick="xwOpenFeed()"><span class="xw-entry-mark">⌁</span><span><strong>Moments</strong><small>把日常挂在这里</small></span><span class="xw-entry-arrow">↗</span></button>
+  <button class="xw-entry" onclick="xwOpenFavorites()"><span class="xw-entry-mark">♧</span><span><strong>Favorites</strong><small>珍藏彼此的话</small></span><span class="xw-entry-arrow">↗</span></button>
+ </div>
+ <div class="xw-footer-note">A LETTER, A MOMENT, A MEMORY</div>
 </section>
 <section id="xiaowoFeed" aria-label="动态">
  <button class="xw-back" onclick="xwShowHub()">‹ 返回小窝</button><div class="xw-kicker">MOMENTS · OUR DAYS</div><div class="xw-heading">动态</div><div class="xw-sub">留下一点今天的痕迹。</div>
@@ -10417,7 +10467,8 @@ Object.keys(window.__xyBridge).forEach(function (k) {
 })();</script>
 
 <script>
-window.xwShowHub=function(){document.getElementById('xiaowoHub').style.display='flex';document.getElementById('xiaowoFeed').style.display='none';document.getElementById('xiaowoFavorites').style.display='none';document.getElementById('chatHome').style.display='none';document.querySelector('#pg-chat .app').style.display='none';};
+window.xwUpdateLoveDays=function(){var el=document.getElementById('xwLoveDays');if(!el)return;var start=new Date(2026,9,28);var today=new Date();today.setHours(0,0,0,0);el.textContent=Math.max(1,Math.floor((today-start)/86400000)+1);};
+window.xwShowHub=function(){if(window.xwUpdateLoveDays)window.xwUpdateLoveDays();document.getElementById('xiaowoHub').style.display='flex';document.getElementById('xiaowoFeed').style.display='none';document.getElementById('xiaowoFavorites').style.display='none';document.getElementById('chatHome').style.display='none';document.querySelector('#pg-chat .app').style.display='none';};
 window.xwOpenChat=function(){document.getElementById('xiaowoHub').style.display='none';document.getElementById('xiaowoFeed').style.display='none';document.getElementById('xiaowoFavorites').style.display='none';document.getElementById('chatHome').style.display='flex';document.querySelector('#pg-chat .app').style.display='flex';};
 window.xwOpenFeed=function(){document.getElementById('xiaowoHub').style.display='none';document.getElementById('chatHome').style.display='none';document.querySelector('#pg-chat .app').style.display='none';document.getElementById('xiaowoFeed').style.display='flex';xwRenderFeed();};
 window.xwOpenFavorites=function(){document.getElementById('xiaowoHub').style.display='none';document.getElementById('chatHome').style.display='none';document.querySelector('#pg-chat .app').style.display='none';document.getElementById('xiaowoFavorites').style.display='flex';xwRenderFavorites();};
