@@ -10902,6 +10902,92 @@ window.addEventListener('hashchange', function () {
 })();
 </script>
 
+<script id="xiaowo-global-integration">
+/* 小窝全站联动：我的设定是全站的唯一来源，页面只负责呈现 */
+(function(){
+  'use strict';
+  var KEYS={
+    identity:['xiaoye-avatar-ta','xiaoye-avatar-me','xiaoye-profile-v1','xiaoye-portrait','xiaoye-set-v1'],
+    appearance:['xiaoye-appear-v1','xiaoye-beauty-v1','xiaoye-wallpaper','xiaoye-wallpaper-url','xiaoye-wallpaper-blur','xiaoye-wallpaper-veil','xiaoye-wallpaper-tex','xiaoye-dark','xiaoye-dark-cfg','xiaoye-chatbg-v1','xiaoye-ui-scale','xiaoye-themes-v1'],
+    memory:['xiaoye-mem-v1','xiaoye-memos-v1'],
+    favorites:['xiaoye-fav-v1'],
+    moments:['xiaowo-moments-v1']
+  };
+  function has(list,key){return key===null||list.indexOf(key)>=0;}
+  function readJSON(key,fallback){try{return JSON.parse(localStorage.getItem(key)||'null')||fallback;}catch(e){return fallback;}}
+  function anniversary(){
+    if(typeof window.__anniInfo==='function')return window.__anniInfo();
+    var set=readJSON('xiaoye-set-v1',{}),raw=set.anniDate||'2026-10-28',p=String(raw).split(/[-/]/);
+    var start=new Date(+p[0],(+p[1]||1)-1,+p[2]||1),today=new Date();today.setHours(0,0,0,0);
+    var days=Math.max(1,Math.floor((today-start)/86400000)+1);
+    return {start:start,days:days,next:Math.max(100,Math.ceil(days/100)*100)};
+  }
+  function syncDays(){
+    var a=anniversary(),days=a.days,left=a.next-days;
+    [['bigDays',days],['dayNum',days],['xp-days-count',days],['xwLoveDays',days],['conDays',days]].forEach(function(pair){
+      var el=document.getElementById(pair[0]);if(el)el.textContent=pair[1];
+    });
+    var leftEl=document.getElementById('daysLeftNum');if(leftEl)leftEl.textContent=Math.max(0,left);
+    var pct=((days%100)/100)*100,fill=document.getElementById('dpFill'),dot=document.getElementById('dpDot');
+    if(fill)fill.style.width=(days%100===0?100:pct)+'%';
+    if(dot)dot.style.left=(days%100===0?100:pct)+'%';
+    var en=document.querySelector('#pg-home .an-en');
+    if(en&&a.start instanceof Date&&!isNaN(a.start))en.textContent='together · since '+a.start.getFullYear()+'.'+String(a.start.getMonth()+1).padStart(2,'0')+'.'+String(a.start.getDate()).padStart(2,'0');
+  }
+  function syncIdentity(){
+    if(typeof window.__syncIdentity==='function'){try{window.__syncIdentity();}catch(e){}}
+    var profile=readJSON('xiaoye-profile-v1',{});
+    var partner=(profile.name||'宋祁').trim()||'宋祁';
+    var names=document.querySelector('#pg-home .an-names');
+    if(names){
+      names.replaceChildren(document.createTextNode(partner+' '));
+      var amp=document.createElement('span');amp.className='an-amp';amp.textContent='&';
+      names.append(amp,document.createTextNode(' 淼淼'));
+    }
+    var faces=document.querySelectorAll('#pg-home .an-face');
+    var ta=localStorage.getItem('xiaoye-avatar-ta')||'',me=localStorage.getItem('xiaoye-avatar-me')||'';
+    [ta,me].forEach(function(src,i){
+      if(!faces[i])return;
+      if(src&&window.__avaHtml)faces[i].innerHTML=window.__avaHtml(src);
+      else faces[i].innerHTML='<b>'+((i===0?partner:'淼淼').slice(0,1))+'</b>';
+    });
+    var pair=document.querySelectorAll('#pg-mine .dc-pair .avatar');
+    [ta,me].forEach(function(src,i){if(pair[i]&&src&&window.__avaHtml)pair[i].innerHTML=window.__avaHtml(src);});
+    syncDays();
+  }
+  function syncAppearance(key){
+    if(!has(KEYS.appearance,key))return;
+    if((key==='xiaoye-dark'||key==='xiaoye-dark-cfg')&&window.pgMine&&typeof window.pgMine.applyDarkAuto==='function'){
+      try{window.pgMine.applyDarkAuto();}catch(e){}
+    }
+    if(has(['xiaoye-wallpaper','xiaoye-wallpaper-url'],key)){
+      var apply=window.pgMine&&window.pgMine.applyWallpaper||window.applyWallpaper;
+      if(typeof apply==='function')try{apply();}catch(e){}
+    }
+    if(typeof window.__reapplyChatTheme==='function')try{window.__reapplyChatTheme();}catch(e){}
+    window.dispatchEvent(new CustomEvent('xiaowo:appearance-sync',{detail:{key:key}}));
+  }
+  function refresh(key){
+    if(has(KEYS.identity,key))syncIdentity();
+    syncAppearance(key);
+    if(has(KEYS.memory,key)&&window.XiaowoPages&&typeof window.XiaowoPages.renderMemories==='function')window.XiaowoPages.renderMemories();
+    if(has(KEYS.favorites,key)&&typeof window.xwRenderFavorites==='function')window.xwRenderFavorites();
+    if(has(KEYS.moments,key)&&typeof window.xwRenderFeed==='function')window.xwRenderFeed();
+    if(key==='xiaoye-set-v1'||key===null)syncDays();
+  }
+  window.XiaowoApp={
+    getAnniversary:anniversary,
+    getIdentity:function(){var p=readJSON('xiaoye-profile-v1',{});return {partner:p.name||'宋祁',self:'淼淼',partnerAvatar:localStorage.getItem('xiaoye-avatar-ta')||'',selfAvatar:localStorage.getItem('xiaoye-avatar-me')||''};},
+    refresh:refresh,
+    navigate:function(page){if(typeof window.__nav==='function')window.__nav(page);}
+  };
+  if(window.XiaowoStore&&typeof window.XiaowoStore.subscribe==='function')window.XiaowoStore.subscribe(function(e){refresh(e&&e.detail?e.detail.key:(e?e.key:null));});
+  window.addEventListener('pageshow',function(){refresh(null);});
+  window.addEventListener('load',function(){refresh(null);});
+  document.addEventListener('visibilitychange',function(){if(!document.hidden)refresh(null);});
+  refresh(null);
+})();
+</script>
 <script id="xiaowo-app-core">
 /* Shared app services. Existing xiaoye-* storage keys are intentionally preserved. */
 (function(){
