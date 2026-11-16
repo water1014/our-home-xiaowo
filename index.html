@@ -3484,9 +3484,48 @@ html.dark #pg-life .life-note:after{background:#d18a8d;border-color:#e7e9e1}
 </div>
 
 
+<style id="xiaowo-hub-style">
+#pg-chat #xiaowoHub,#pg-chat #xiaowoFeed,#pg-chat #xiaowoFavorites{position:fixed;inset:0;z-index:205;max-width:30rem;margin:0 auto;display:none;flex-direction:column;overflow:auto;padding:calc(1.1rem + env(safe-area-inset-top)) 1.2rem calc(6.2rem + env(safe-area-inset-bottom));background:radial-gradient(ellipse at 12% 0%,rgba(255,255,255,.9),transparent 48%),linear-gradient(160deg,#eaf5f7,#f7f8f4 72%,#e8f1ef);color:#49616a}
+html.dark #pg-chat #xiaowoHub,html.dark #pg-chat #xiaowoFeed,html.dark #pg-chat #xiaowoFavorites{background:linear-gradient(160deg,#1c2b32,#20282b 75%,#202b2b);color:#dce8e7}
+#pg-chat #xiaowoHub{display:flex}
+#pg-chat .xw-kicker{font: .62rem Georgia,serif;letter-spacing:.28em;color:#91aeb6}
+#pg-chat .xw-heading{font:2rem "Songti SC","Noto Serif SC",serif;letter-spacing:.12em;margin:.5rem 0 .35rem;color:#45616d}
+html.dark #pg-chat .xw-heading{color:#e1eeee}
+#pg-chat .xw-sub{font-size:.72rem;letter-spacing:.08em;color:#8ba4aa}
+#pg-chat .xw-entry{display:flex;align-items:center;gap:1rem;padding:1.15rem 1.05rem;margin-top:.8rem;border:1px solid rgba(255,255,255,.86);border-radius:1.15rem;background:rgba(255,255,255,.57);box-shadow:0 8px 24px rgba(70,105,112,.055);text-align:left;color:inherit}
+html.dark #pg-chat .xw-entry{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.1)}
+#pg-chat .xw-entry-mark{width:2.7rem;height:2.7rem;display:grid;place-items:center;border-radius:50%;background:rgba(177,211,216,.28);font:1.2rem Georgia,serif;color:#7599a1;flex:none}
+#pg-chat .xw-entry strong{display:block;font:1.02rem "Songti SC","Noto Serif SC",serif;letter-spacing:.12em}
+#pg-chat .xw-entry small{display:block;margin-top:.3rem;font-size:.65rem;color:#91a6aa;letter-spacing:.04em}
+#pg-chat .xw-arrow{margin-left:auto;color:#9db5b8;font-size:1.1rem}
+#pg-chat .xw-back{align-self:flex-start;border:0;background:transparent;color:inherit;padding:.25rem 0 .9rem;font: .78rem "Songti SC",serif}
+#pg-chat .xw-compose{width:100%;min-height:5.2rem;margin:1rem 0 .5rem;padding:.85rem;border:1px solid rgba(130,166,172,.25);border-radius:.85rem;background:rgba(255,255,255,.62);font: .82rem/1.7 sans-serif;color:inherit;resize:vertical}
+#pg-chat .xw-postbtn{align-self:flex-end;border:0;border-radius:2rem;padding:.55rem 1.15rem;background:#789ba2;color:white;font-size:.72rem}
+#pg-chat .xw-post{padding:1rem 0;border-bottom:1px solid rgba(130,166,172,.2)}
+#pg-chat .xw-post-meta{font-size:.65rem;color:#91a6aa;margin-bottom:.55rem}
+#pg-chat .xw-post-body{font:.86rem/1.8 "Songti SC","Noto Serif SC",serif;white-space:pre-wrap;overflow-wrap:anywhere}
+#pg-chat .xw-empty{padding:3rem 1rem;text-align:center;color:#91a6aa;font:.8rem/2 "Songti SC",serif}
+</style>
+<section id="xiaowoHub" aria-label="小窝">
+ <div class="xw-kicker">OUR LITTLE PLACE · TWO OF US</div>
+ <div class="xw-heading">小窝</div><div class="xw-sub">把日常留在这里。</div>
+ <div style="height:1.25rem"></div>
+ <button class="xw-entry" onclick="xwOpenChat()"><span class="xw-entry-mark">♡</span><span><strong>Chat · 聊天</strong><small>回到你和宋祁的对话</small></span><span class="xw-arrow">›</span></button>
+ <button class="xw-entry" onclick="xwOpenFeed()"><span class="xw-entry-mark">⌁</span><span><strong>动态</strong><small>两个人的日常与小小分享</small></span><span class="xw-arrow">›</span></button>
+ <button class="xw-entry" onclick="xwOpenFavorites()"><span class="xw-entry-mark">✧</span><span><strong>收藏</strong><small>你和宋祁珍藏的聊天片段</small></span><span class="xw-arrow">›</span></button>
+</section>
+<section id="xiaowoFeed" aria-label="动态">
+ <button class="xw-back" onclick="xwShowHub()">‹ 返回小窝</button><div class="xw-kicker">MOMENTS · OUR DAYS</div><div class="xw-heading">动态</div><div class="xw-sub">留下一点今天的痕迹。</div>
+ <textarea id="xwFeedInput" class="xw-compose" placeholder="今天有什么想记下来的？"></textarea><button class="xw-postbtn" onclick="xwPublish()">发布动态</button>
+ <div id="xwFeedList"></div>
+</section>
+<section id="xiaowoFavorites" aria-label="收藏">
+ <button class="xw-back" onclick="xwShowHub()">‹ 返回小窝</button><div class="xw-kicker">KEEPSAKES · SAVED WORDS</div><div class="xw-heading">收藏</div><div class="xw-sub">聊天里舍不得划走的话。</div>
+ <div id="xwFavList"></div>
+</section>
 <div id="chatHome">
   <div class="ch-top" style="display:flex; justify-content:space-between; align-items:center;">
-    <a class="ch-home" href="index.html">‹ 首页</a>
+    <a class="ch-home" href="javascript:xwShowHub()">‹ 小窝</a>
     <span style="font-family:var(--c-serif); font-size:.95rem; letter-spacing:.3em; color:var(--c-ink);">小 窝</span>
     <span style="display:flex; gap:.45rem;">
       <a class="ch-home" href="javascript:pgChat.openDemoPicker()">✦ 创意</a>
@@ -10378,9 +10417,17 @@ Object.keys(window.__xyBridge).forEach(function (k) {
 })();</script>
 
 <script>
+window.xwShowHub=function(){document.getElementById('xiaowoHub').style.display='flex';document.getElementById('xiaowoFeed').style.display='none';document.getElementById('xiaowoFavorites').style.display='none';document.getElementById('chatHome').style.display='none';document.querySelector('#pg-chat .app').style.display='none';};
+window.xwOpenChat=function(){document.getElementById('xiaowoHub').style.display='none';document.getElementById('xiaowoFeed').style.display='none';document.getElementById('xiaowoFavorites').style.display='none';document.getElementById('chatHome').style.display='flex';document.querySelector('#pg-chat .app').style.display='flex';};
+window.xwOpenFeed=function(){document.getElementById('xiaowoHub').style.display='none';document.getElementById('chatHome').style.display='none';document.querySelector('#pg-chat .app').style.display='none';document.getElementById('xiaowoFeed').style.display='flex';xwRenderFeed();};
+window.xwOpenFavorites=function(){document.getElementById('xiaowoHub').style.display='none';document.getElementById('chatHome').style.display='none';document.querySelector('#pg-chat .app').style.display='none';document.getElementById('xiaowoFavorites').style.display='flex';xwRenderFavorites();};
+window.xwPublish=function(){var el=document.getElementById('xwFeedInput'),v=(el.value||'').trim();if(!v)return;var a=[];try{a=JSON.parse(localStorage.getItem('xiaowo-moments-v1')||'[]')}catch(e){}a.unshift({text:v,by:'我',time:new Date().toLocaleString()});localStorage.setItem('xiaowo-moments-v1',JSON.stringify(a));el.value='';xwRenderFeed();};
+window.xwRenderFeed=function(){var a=[];try{a=JSON.parse(localStorage.getItem('xiaowo-moments-v1')||'[]')}catch(e){}var el=document.getElementById('xwFeedList');el.innerHTML=a.length?a.map(p=>'<article class="xw-post"><div class="xw-post-meta">'+String(p.by||'我们')+' · '+String(p.time||'')+'</div><div class="xw-post-body">'+String(p.text||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))+'</div></article>').join(''):'<div class="xw-empty">还没有动态。<br>先写下你们的第一件小事吧。</div>';};
+window.xwRenderFavorites=function(){var a=[];try{a=JSON.parse(localStorage.getItem('xiaoye-fav-v1')||'[]')}catch(e){}var el=document.getElementById('xwFavList');el.innerHTML=a.length?a.map((f,i)=>'<article class="xw-post"><div class="xw-post-meta">'+(f.role==='me'?'我':'宋祁')+' · '+String(f.date||'')+' '+String(f.time||'')+'</div><div class="xw-post-body">'+String(f.text||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))+'</div></article>').join(''):'<div class="xw-empty">还没有收藏。<br>在聊天中长按消息，就能把它留在这里。</div>';};
 window.__nav = function (name) {
   var map = { home: 'pg-home', chat: 'pg-chat', mine: 'pg-mine' };
   if (!map[name]) return;
+  if(name==='chat'&&window.xwShowHub) window.xwShowHub();
   var nodes = document.querySelectorAll('.pg');
   for (var i = 0; i < nodes.length; i++) nodes[i].classList.toggle('on', nodes[i].id === map[name]);
   var tabs = document.querySelectorAll('.tab-item');
