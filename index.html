@@ -11036,50 +11036,62 @@ html.dark #pg-memo .xp-memory{background:rgba(255,255,255,.045);color:#d4e2e8;bo
 #pg-home .clip-pin{background:linear-gradient(180deg,#eef5f7,#a9c0cc);border-color:#fff}
 html.dark #pg-home .days-card,html.dark #pg-home .card{background:linear-gradient(145deg,rgba(36,52,61,.9),rgba(25,39,47,.86));border-color:rgba(255,255,255,.12)}
 html.dark #pg-home .moments{background:rgba(28,42,50,.8)}
-/* Life: red thread and hanging keepsakes */
-#pg-life{box-sizing:border-box;padding:calc(.82rem + env(safe-area-inset-top)) .95rem calc(5.8rem + env(safe-area-inset-bottom))!important;overflow-y:auto!important;background:transparent!important;scrollbar-width:none}#pg-life::-webkit-scrollbar{display:none}
-#pg-life .life-scene{padding:.15rem .15rem .8rem;position:relative}
-#pg-life .life-scene-top{display:flex;align-items:center;justify-content:space-between;font:.48rem Georgia,serif;letter-spacing:.16em;color:#91aab7}
-#pg-life .life-date-mark{display:flex;align-items:center;gap:.4rem;font-size:.46rem;letter-spacing:.1em}.life-date-mark i{font-style:normal;color:#b67e87;font-size:.75rem}
-#pg-life .life-title-row{display:flex;align-items:center;justify-content:space-between;padding:.52rem .05rem .35rem}
-#pg-life .life-title-row h1{margin:0;font:normal 2.35rem/1.1 "Songti SC","Noto Serif SC",serif;letter-spacing:.2em;color:#4d6b7b}
+/* Life: refined keepsake rail */
+#pg-life{box-sizing:border-box;padding:calc(.9rem + env(safe-area-inset-top)) 1rem calc(5.8rem + env(safe-area-inset-bottom))!important;overflow-y:auto!important;background:transparent!important;scrollbar-width:none}
+#pg-life::-webkit-scrollbar{display:none}
+#pg-life .life-scene{padding:.18rem .12rem 1.1rem;position:relative}
+#pg-life .life-scene-top{display:flex;align-items:center;justify-content:space-between;font:.49rem Georgia,serif;letter-spacing:.18em;color:#91aab7}
+#pg-life .life-date-mark{display:flex;align-items:center;gap:.42rem;font-size:.46rem;letter-spacing:.1em}.life-date-mark i{font-style:normal;color:#b7838b;font-size:.78rem}
+#pg-life .life-title-row{display:flex;align-items:center;justify-content:space-between;padding:.62rem .05rem .52rem}
+#pg-life .life-title-row h1{margin:0;font:normal 2.5rem/1.08 "Songti SC","Noto Serif SC",serif;letter-spacing:.2em;color:#4d6b7b}
 #pg-life .life-title-row h1 span{color:#b7838b}
-#pg-life .life-title-row p{margin:.38rem 0 0;font:.68rem "Songti SC",serif;letter-spacing:.06em;color:#8da5b2}
-#pg-life .life-chime{width:4.5rem;height:4.3rem;position:relative;margin-right:.35rem}
-#pg-life .life-chime:before{content:"";position:absolute;top:.1rem;left:50%;height:1.25rem;border-left:1px solid #bd9298}
-#pg-life .life-chime:after{content:"";position:absolute;top:1.32rem;left:50%;width:2.2rem;height:1.2rem;border-top:1px solid #bd9298;border-radius:50% 50% 0 0;transform:translateX(-50%)}
-#pg-life .life-chime i{position:absolute;top:1.82rem;width:1px;height:1rem;background:#b7cbd3}
-#pg-life .life-chime i:first-child{left:1.1rem}.life-chime i:nth-child(2){right:1.05rem}
-#pg-life .life-chime b{position:absolute;left:50%;top:1.9rem;width:.42rem;height:.42rem;border:1px solid #b7838b;border-radius:50%;transform:translateX(-50%);background:rgba(255,255,255,.45)}
-#pg-life .life-chime em{position:absolute;left:50%;top:2.75rem;width:.62rem;height:.88rem;border:1px solid #a9c0ca;border-radius:.05rem .05rem .3rem .3rem;transform:translateX(-50%);background:linear-gradient(160deg,#f8fbfc,#dce9ee)}
-#pg-life .life-thread-intro{display:flex;align-items:center;gap:.5rem;padding:.3rem 0 .1rem;color:#a0b3bd}
-#pg-life .life-thread-intro span{height:1px;flex:1;background:linear-gradient(90deg,transparent,rgba(176,133,141,.55),transparent)}
-#pg-life .life-thread-intro small{font:.56rem "Songti SC",serif;letter-spacing:.12em;white-space:nowrap}
-#pg-life .life-hanging{position:relative;padding:.35rem 0 0 .9rem;margin-left:.32rem}
-#pg-life .life-hanging:before{content:"";position:absolute;top:0;bottom:.5rem;left:.08rem;width:1px;background:linear-gradient(180deg,#bd9298 0%,#d2b2b6 40%,#b9cbd3 100%);opacity:.78}
-#pg-life .life-hang-group{position:relative;padding:.62rem 0 .78rem .85rem}
-#pg-life .life-hang-group:before{content:"";position:absolute;left:-.94rem;top:1.02rem;width:.48rem;height:.48rem;border:1px solid #b7838b;border-radius:50%;background:#edf3f4;box-shadow:0 0 0 3px rgba(183,131,139,.08)}
-#pg-life .life-hang-label{display:flex;align-items:center;gap:.58rem;margin-bottom:.52rem}
-#pg-life .life-knot{width:1.62rem;height:1.62rem;display:grid;place-items:center;border:1px solid rgba(177,132,140,.55);border-radius:50%;font:italic .7rem Georgia,serif;color:#a97982;background:rgba(255,255,255,.48)}
-#pg-life .life-hang-label h2{margin:0;font:600 .84rem "Songti SC",serif;letter-spacing:.1em;color:#587586}
-#pg-life .life-hang-label p{margin:.12rem 0 0;font:.55rem "Songti SC",serif;letter-spacing:.04em;color:#9aafb9}
-#pg-life .life-hang-items{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.38rem;align-items:start}
-#pg-life .life-hang-items button{position:relative;min-width:0;min-height:4.25rem;padding:.88rem .16rem .48rem;border:1px solid rgba(174,195,204,.56);border-radius:.12rem .12rem .38rem .12rem;background:linear-gradient(155deg,rgba(255,255,255,.88),rgba(233,242,245,.8));box-shadow:0 4px 9px rgba(72,103,120,.055);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.14rem;color:#607d8c;cursor:pointer;-webkit-tap-highlight-color:transparent}
-#pg-life .life-hang-items button:before{content:"";position:absolute;top:-.56rem;left:50%;height:.56rem;border-left:1px solid #b98c93}
-#pg-life .life-hang-items button:after{content:"";position:absolute;top:-.64rem;left:calc(50% - .13rem);width:.22rem;height:.22rem;border:1px solid #b98c93;border-radius:50%;background:#edf3f4}
-#pg-life .life-hang-items button:nth-child(even){margin-top:.3rem}
-#pg-life .life-hang-items button i{font:normal .9rem "Songti SC",serif;color:#9aabb5}
-#pg-life .life-hang-items button span{font:.73rem "Songti SC",serif;letter-spacing:.04em;color:#587586;white-space:nowrap}
-#pg-life .life-hang-items button small{font:.37rem Georgia,serif;letter-spacing:.08em;color:#a4b5bd;white-space:nowrap}
+#pg-life .life-title-row p{margin:.48rem 0 0;font:.7rem "Songti SC",serif;letter-spacing:.08em;color:#8da5b2}
+#pg-life .life-chime{width:4.2rem;height:4.2rem;position:relative;margin-right:.45rem;opacity:.86}
+#pg-life .life-chime:before{content:"";position:absolute;top:.04rem;left:50%;height:1.25rem;border-left:1px solid #bd9298}
+#pg-life .life-chime:after{content:"";position:absolute;top:1.28rem;left:50%;width:2.05rem;height:1.12rem;border-top:1px solid #bd9298;border-radius:50% 50% 0 0;transform:translateX(-50%)}
+#pg-life .life-chime i{position:absolute;top:1.8rem;width:1px;height:.92rem;background:#b7cbd3}
+#pg-life .life-chime i:first-child{left:1.05rem}.life-chime i:nth-child(2){right:1rem}
+#pg-life .life-chime b{position:absolute;left:50%;top:1.88rem;width:.38rem;height:.38rem;border:1px solid #b7838b;border-radius:50%;transform:translateX(-50%);background:rgba(255,255,255,.5)}
+#pg-life .life-chime em{position:absolute;left:50%;top:2.68rem;width:.56rem;height:.82rem;border:1px solid #a9c0ca;border-radius:.04rem .04rem .26rem .26rem;transform:translateX(-50%);background:linear-gradient(160deg,#f8fbfc,#dce9ee)}
+#pg-life .life-thread-intro{display:flex;align-items:center;gap:.6rem;padding:.42rem 0 .15rem;color:#9aafb9}
+#pg-life .life-thread-intro span{height:1px;flex:1;background:linear-gradient(90deg,transparent,rgba(176,133,141,.48),transparent)}
+#pg-life .life-thread-intro small{font:.56rem "Songti SC",serif;letter-spacing:.14em;white-space:nowrap}
+#pg-life .life-hanging{position:relative;padding:.28rem 0 0 .82rem;margin-left:.3rem}
+#pg-life .life-hanging:before{content:"";position:absolute;top:.05rem;bottom:.7rem;left:.08rem;width:1px;background:linear-gradient(180deg,#bd9298 0%,#d2b2b6 34%,#b9cbd3 72%,#bd9298 100%);opacity:.82}
+#pg-life .life-hang-group{position:relative;padding:.62rem 0 .9rem .82rem}
+#pg-life .life-hang-group:before{content:"";position:absolute;left:-.91rem;top:1.05rem;width:.46rem;height:.46rem;border:1px solid #b7838b;border-radius:50%;background:#edf3f4;box-shadow:0 0 0 3px rgba(183,131,139,.09)}
+#pg-life .life-hang-label{display:flex;align-items:center;gap:.62rem;margin:0 0 .62rem;position:relative}
+#pg-life .life-knot{width:1.58rem;height:1.58rem;flex:0 0 1.58rem;display:grid;place-items:center;border:1px solid rgba(177,132,140,.55);border-radius:50%;font:italic .68rem Georgia,serif;color:#a97982;background:linear-gradient(145deg,rgba(255,255,255,.8),rgba(231,239,242,.58))}
+#pg-life .life-hang-label h2{margin:0;font:600 .86rem "Songti SC",serif;letter-spacing:.12em;color:#587586}
+#pg-life .life-hang-label p{margin:.16rem 0 0;font:.55rem "Songti SC",serif;letter-spacing:.06em;color:#9aafb9}
+#pg-life .life-hang-items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.48rem .58rem;align-items:start}
+#pg-life .life-hang-items button{position:relative;min-width:0;min-height:5rem;padding:.88rem .68rem .7rem;border:1px solid rgba(174,195,204,.58);border-radius:.12rem .12rem .28rem .12rem;background:linear-gradient(145deg,rgba(255,255,255,.92) 0%,rgba(246,249,249,.9) 48%,rgba(226,237,241,.88) 100%);box-shadow:0 5px 12px rgba(72,103,120,.055),inset 0 0 0 2px rgba(255,255,255,.34);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:.12rem;color:#607d8c;cursor:pointer;-webkit-tap-highlight-color:transparent;overflow:visible}
+#pg-life .life-hang-items button:before{content:"";position:absolute;top:-.59rem;left:1.05rem;height:.59rem;border-left:1px solid #b98c93}
+#pg-life .life-hang-items button:after{content:"";position:absolute;top:-.68rem;left:.96rem;width:.18rem;height:.18rem;border:1px solid #b98c93;border-radius:50%;background:#edf3f4;box-shadow:0 0 0 2px rgba(183,131,139,.08)}
+#pg-life .life-hang-items button:nth-child(even){margin-top:.38rem}
+#pg-life .life-hang-items button i{font:normal .92rem "Songti SC",serif;color:#a1b4bd;margin-bottom:.12rem}
+#pg-life .life-hang-items button span{font:.82rem "Songti SC",serif;letter-spacing:.08em;color:#587586;white-space:nowrap}
+#pg-life .life-hang-items button small{font:.42rem Georgia,serif;letter-spacing:.12em;color:#a4b5bd;white-space:nowrap}
 #pg-life .life-hang-items button:active{transform:translateY(2px);background:#e5eff2}
+#pg-life .life-hang-items button:nth-child(3n+2){background:linear-gradient(150deg,rgba(250,252,252,.94),rgba(233,241,244,.9));}
+#pg-life .life-hang-items button:nth-child(4n){border-radius:.12rem .3rem .12rem .12rem}
+#pg-life .life-hang-items button:nth-child(4n):after{border-radius:2px}
 #pg-life .life-placeholder{background:radial-gradient(ellipse at 50% 0%,rgba(255,255,255,.92),transparent 60%),linear-gradient(160deg,#e2edf1,#f0f4f4)!important}
 #pg-life .life-placeholder-content{position:relative;background:linear-gradient(145deg,#fff,#f0f5f6);border:1px solid white;box-shadow:var(--letter-shadow);padding:1.5rem 1rem;border-radius:.15rem .75rem .15rem .75rem}
 #pg-life .life-placeholder-mark{border-color:#a8bfca;color:#819ead}
-html.dark #pg-life .life-title-row h1{color:#d8e6eb}html.dark #pg-life .life-title-row p,html.dark #pg-life .life-scene-top{color:#9db5c1}html.dark #pg-life .life-chime em{background:#344b57}html.dark #pg-life .life-thread-intro{color:#a1b6c0}
-html.dark #pg-life .life-hanging:before{opacity:.5}html.dark #pg-life .life-hang-group:before{background:#263b45}
-html.dark #pg-life .life-knot{background:rgba(255,255,255,.04);color:#d1a8ad;border-color:rgba(209,168,173,.4)}html.dark #pg-life .life-hang-label h2,html.dark #pg-life .life-hang-items button span{color:#d7e5eb}html.dark #pg-life .life-hang-label p,html.dark #pg-life .life-hang-items button small{color:#9ab0bb}
-html.dark #pg-life .life-hang-items button{background:linear-gradient(155deg,rgba(49,68,78,.92),rgba(31,47,56,.9));border-color:rgba(190,211,222,.18);box-shadow:none}html.dark #pg-life .life-hang-items button i{color:#b5c7cf}
+html.dark #pg-life .life-title-row h1{color:#d8e6eb}
+html.dark #pg-life .life-title-row p,html.dark #pg-life .life-scene-top{color:#9db5c1}
+html.dark #pg-life .life-chime em{background:#344b57}
+html.dark #pg-life .life-thread-intro{color:#a1b6c0}
+html.dark #pg-life .life-hanging:before{opacity:.5}
+html.dark #pg-life .life-hang-group:before{background:#263b45}
+html.dark #pg-life .life-knot{background:rgba(255,255,255,.04);color:#d1a8ad;border-color:rgba(209,168,173,.4)}
+html.dark #pg-life .life-hang-label h2,html.dark #pg-life .life-hang-items button span{color:#d7e5eb}
+html.dark #pg-life .life-hang-label p,html.dark #pg-life .life-hang-items button small{color:#9ab0bb}
+html.dark #pg-life .life-hang-items button{background:linear-gradient(145deg,rgba(49,68,78,.96),rgba(31,47,56,.92));border-color:rgba(190,211,222,.2);box-shadow:inset 0 0 0 2px rgba(255,255,255,.025)}
+html.dark #pg-life .life-hang-items button:nth-child(3n+2){background:linear-gradient(150deg,rgba(43,62,72,.96),rgba(29,45,54,.92))}
+html.dark #pg-life .life-hang-items button i{color:#b5c7cf}
 html.dark #pg-life .life-placeholder-content{background:linear-gradient(145deg,#263a45,#1b2d36);border-color:rgba(255,255,255,.12)}
-@media(max-width:370px){#pg-life{padding-left:.78rem!important;padding-right:.78rem!important}#pg-life .life-hang-items{gap:.25rem}#pg-life .life-hang-items button{min-height:4rem;padding-left:.08rem;padding-right:.08rem}#pg-life .life-hang-items button span{font-size:.68rem}#pg-life .life-hang-items button small{font-size:.32rem}}
+@media(max-width:370px){#pg-life{padding-left:.78rem!important;padding-right:.78rem!important}#pg-life .life-hang-items{gap:.4rem}#pg-life .life-hang-items button{min-height:4.7rem;padding-left:.52rem;padding-right:.4rem}#pg-life .life-hang-items button span{font-size:.76rem}#pg-life .life-hang-items button small{font-size:.38rem}}
 @media(prefers-reduced-motion:reduce){#pg-life .life-hang-items button{transition:none}}
 </style>
