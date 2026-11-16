@@ -2951,7 +2951,7 @@ html.dark{
 /* ── 3. 同一张底：切页不再从「水色」跳到「纯白 / 灰白」 ── */
 body{ background:var(--u-bg) !important; background-attachment:fixed !important; }
 .pg{ background:transparent !important; }
-html:not(.photo-wp) #wpLayer{ background:var(--u-bg) !important; }
+/* 预设壁纸由 applyWallpaper 写入 #wpLayer，不能再用主题底色覆盖它。 */
 #pg-home .app, #pg-mine .app, #pg-mine .main{
   background:transparent !important;
 }
