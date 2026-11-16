@@ -3459,8 +3459,30 @@ html.dark #pg-life .life-note:after{background:#d18a8d;border-color:#e7e9e1}
  #pg-life .life-rope-row.four .life-note:nth-child(3),#pg-life .life-rope-row.four .life-note:nth-child(4){margin-top:2.8rem}
 }
 </style>
+
+<style id="xiaowo-wallpaper-global-layer">
+/* 壁纸是应用级背景，不属于「我的」页面。三层固定在所有页面之下。 */
+body{isolation:isolate!important;background:var(--u-bg,#e8f4f8)!important;background-attachment:fixed!important}
+#wpLayer,#wpVeil,#wpTex{position:fixed!important;inset:0!important;width:100%!important;height:100%!important;pointer-events:none!important}
+#wpLayer{z-index:0!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important}
+#wpVeil{z-index:0!important}
+#wpTex{z-index:0!important}
+.pg{position:relative;z-index:1!important;background:transparent!important}
+html:not(.photo-wp) #wpLayer{background:var(--u-bg,linear-gradient(180deg,#d6edf7,#e8f7fb))!important}
+html.photo-wp{--m-wp-fog:255,255,255;--m-wp-ink:#1e3a47;--m-wp-ink-2:#3b5a68;--m-wp-ink-3:#557381;--m-wp-halo:rgba(255,255,255,.96);--m-wp-halo-soft:rgba(255,255,255,.72);--m-wp-line:rgba(30,58,71,.34);--m-wp-glass:rgba(255,255,255,.14);--m-wp-glass-edge:rgba(255,255,255,.44)}
+html.photo-wp.wp-tone-dark,html.dark.photo-wp{--m-wp-fog:8,14,20;--m-wp-ink:#f2f8fb;--m-wp-ink-2:#d2e2eb;--m-wp-ink-3:#b4cbd7;--m-wp-halo:rgba(5,11,17,.94);--m-wp-halo-soft:rgba(5,11,17,.7);--m-wp-line:rgba(226,240,247,.34);--m-wp-glass:rgba(8,14,20,.2);--m-wp-glass-edge:rgba(226,240,247,.2)}
+html.photo-wp #wpVeil{background-image:linear-gradient(180deg,rgba(var(--m-wp-fog),.72) 0%,rgba(var(--m-wp-fog),.56) 6%,rgba(var(--m-wp-fog),.27) 14%,rgba(var(--m-wp-fog),0) 24%,rgba(var(--m-wp-fog),0) 55%,rgba(var(--m-wp-fog),.2) 63%,rgba(var(--m-wp-fog),.5) 73%,rgba(var(--m-wp-fog),.72) 86%,rgba(var(--m-wp-fog),.84) 100%)}
+html.photo-wp #pg-chat #xiaowoHub,html.photo-wp #pg-chat #xiaowoFeed,html.photo-wp #pg-chat #xiaowoFavorites,html.photo-wp #pg-chat #chatHome,html.photo-wp #pg-chat #channelView,html.photo-wp #pg-chat #demoOv{background:rgba(var(--m-wp-fog),.12)!important}
+html.photo-wp #pg-memo:before{background:linear-gradient(160deg,rgba(var(--m-wp-fog),.12),rgba(var(--m-wp-fog),.04))!important}
+html.photo-wp #pg-life{background:transparent!important}
+html.photo-wp #pg-home .main,html.photo-wp #pg-memo,html.photo-wp #pg-life{background:transparent!important}
+</style>
+
 </head>
 <body>
+<div id="wpLayer" aria-hidden="true"></div>
+<div id="wpVeil" aria-hidden="true"></div>
+<div id="wpTex" aria-hidden="true"></div>
 <div class="pg" id="pg-chat">
 <div class="sideview" id="sideView">
   <div class="sv-head"><a class="ch-home" href="javascript:pgChat.closeSide()">‹ 便签墙</a><span class="sv-title" id="svTitle"></span></div>
@@ -4381,9 +4403,6 @@ html.dark #pg-chat #xiaowoHub,html.dark #pg-chat #xiaowoFeed,html.dark #pg-chat 
   
 </div>
 <div class="pg" id="pg-mine">
-<div id="wpLayer"></div>
-<div id="wpVeil"></div>
-<div id="wpTex"></div>
 <div id="bootOv" style="display:none;"><div id="bootInner"><div class="boot-mark">宋祁来信</div><div class="boot-text" id="bootText"></div></div></div>
 <div class="app">
   <div class="main">
