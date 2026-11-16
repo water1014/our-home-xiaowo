@@ -3485,53 +3485,56 @@ html.dark #pg-life .life-note:after{background:#d18a8d;border-color:#e7e9e1}
 
 
 <style id="xiaowo-hub-style">
-#pg-chat #xiaowoHub,#pg-chat #xiaowoFeed,#pg-chat #xiaowoFavorites{position:fixed;inset:0;z-index:205;max-width:30rem;margin:0 auto;display:none;flex-direction:column;overflow:auto;padding:calc(1rem + env(safe-area-inset-top)) 1.05rem calc(6.2rem + env(safe-area-inset-bottom));background:radial-gradient(ellipse 78% 40% at 50% -5%,rgba(255,255,255,.96),transparent 72%),radial-gradient(ellipse 55% 38% at 100% 25%,rgba(176,202,216,.22),transparent 75%),linear-gradient(160deg,#dce8ee 0%,#edf2f3 48%,#e4edf0 100%);color:#536b79;scrollbar-width:none}
+/* Love: quiet correspondence, tactile paper and generous breathing room */
+#pg-chat #xiaowoHub,#pg-chat #xiaowoFeed,#pg-chat #xiaowoFavorites{position:fixed;inset:0;z-index:205;box-sizing:border-box;width:100%;max-width:30rem;margin:0 auto;display:none;flex-direction:column;overflow:auto;padding:calc(1.1rem + env(safe-area-inset-top)) 1.15rem calc(6rem + env(safe-area-inset-bottom));background:radial-gradient(ellipse 95% 36% at 50% -8%,rgba(255,255,255,.96),transparent 72%),radial-gradient(ellipse 55% 38% at 100% 28%,rgba(167,195,210,.2),transparent 78%),linear-gradient(158deg,#e1ebef 0%,#eef2f1 52%,#e5edf0 100%);color:#536c7b;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 #pg-chat #xiaowoHub::-webkit-scrollbar,#pg-chat #xiaowoFeed::-webkit-scrollbar,#pg-chat #xiaowoFavorites::-webkit-scrollbar{display:none}
-html.dark #pg-chat #xiaowoHub,html.dark #pg-chat #xiaowoFeed,html.dark #pg-chat #xiaowoFavorites{background:linear-gradient(160deg,#1b2932,#202c33 70%,#1a252c);color:#e0e9ed}
+html.dark #pg-chat #xiaowoHub,html.dark #pg-chat #xiaowoFeed,html.dark #pg-chat #xiaowoFavorites{background:radial-gradient(ellipse 90% 35% at 50% 0%,rgba(105,139,157,.16),transparent 72%),linear-gradient(160deg,#1b2932,#202d35 65%,#1a252c);color:#dce7eb}
 #pg-chat #xiaowoHub{display:flex;gap:0}
-#pg-chat .xw-love-top{display:flex;justify-content:space-between;align-items:center;margin:.1rem .15rem .2rem}
-#pg-chat .xw-kicker{font:.58rem Georgia,serif;letter-spacing:.22em;color:#91a8b5}
-#pg-chat .xw-edition{font:.58rem Georgia,serif;letter-spacing:.12em;color:#9aafba}
-#pg-chat .xw-love-title{font:italic 2.35rem/1.1 Georgia,"Times New Roman",serif;letter-spacing:.01em;color:#6f8999;margin:.3rem 0 .45rem}
-#pg-chat .xw-love-title span{font-size:1.35rem;color:#9bb3c0}
-#pg-chat .xw-since{font: .76rem Georgia,"Songti SC",serif;letter-spacing:.12em;color:#8299a6}
-#pg-chat .xw-days{display:flex;align-items:baseline;gap:.42rem;margin:.65rem 0 .3rem;color:#7892a2}
-#pg-chat .xw-days strong{font:italic 2.45rem/1 Georgia,serif;font-weight:400;letter-spacing:.03em}
-#pg-chat .xw-days span{font:italic .95rem Georgia,serif;letter-spacing:.08em}
-#pg-chat .xw-love-note{font:.72rem "Songti SC","Noto Serif SC",serif;letter-spacing:.08em;color:#92a6b0;margin-bottom:.7rem}
-#pg-chat .xw-envelope-scene{position:relative;min-height:17.1rem;margin:.15rem -.1rem .15rem;display:flex;align-items:center;justify-content:center}
-#pg-chat .xw-envelope{position:relative;width:94%;height:12.1rem;border-radius:.35rem .35rem .65rem .65rem;background:linear-gradient(155deg,#fffefa 0%,#f4f3ed 52%,#e5ebeb 100%);border:1px solid rgba(255,255,255,.95);box-shadow:0 .75rem 1.5rem rgba(83,112,129,.15),inset 0 1px 0 #fff;transform:rotate(-2deg);overflow:visible}
-#pg-chat .xw-envelope:before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(145deg,transparent 49.5%,rgba(180,198,207,.24) 50%,transparent 50.7%),linear-gradient(35deg,transparent 49.5%,rgba(180,198,207,.18) 50%,transparent 50.7%);pointer-events:none}
-#pg-chat .xw-envelope:after{content:"";position:absolute;left:0;right:0;top:0;height:58%;background:linear-gradient(155deg,#fffefa,#edf0ed);clip-path:polygon(0 0,100% 0,50% 100%);border-bottom:1px solid rgba(180,198,207,.25);filter:drop-shadow(0 2px 2px rgba(90,120,140,.08));}
-#pg-chat .xw-envelope-caption{position:absolute;z-index:2;left:1rem;bottom:1rem;font:italic 1.15rem Georgia,serif;color:#8ca2ae;letter-spacing:.04em}
-#pg-chat .xw-envelope-caption small{display:block;margin-top:.25rem;font: .55rem Georgia,serif;letter-spacing:.22em;color:#a6b7bf}
-#pg-chat .xw-wax{position:absolute;z-index:4;left:50%;top:53%;transform:translate(-50%,-50%) rotate(2deg);width:3.35rem;height:3.35rem;border-radius:50%;display:grid;place-items:center;color:#f8f6ef;font:1.35rem Georgia,serif;background:radial-gradient(circle at 34% 28%,#c6d7df 0%,#8faaba 54%,#6f8fa1 100%);border:2px solid rgba(255,255,255,.62);box-shadow:0 .25rem .55rem rgba(75,105,125,.24),inset 0 1px 3px rgba(255,255,255,.7)}
-#pg-chat .xw-ribbon{position:absolute;z-index:5;width:5rem;height:.35rem;left:50%;top:53%;transform:translate(-50%,-50%) rotate(-2deg);border-radius:1rem;background:linear-gradient(90deg,#a9bfca,#e6edf0,#9bb4c2);opacity:.9}
-#pg-chat .xw-stamp{position:absolute;z-index:3;right:1.1rem;top:1rem;width:2.3rem;height:2.8rem;border:1px dashed #b9c9d0;display:grid;place-items:center;color:#8fa8b5;font:1rem Georgia,serif;transform:rotate(8deg);background:rgba(220,232,236,.35)}
-#pg-chat .xw-hangtag{position:absolute;z-index:7;right:.1rem;top:-.05rem;width:3.5rem;height:5.2rem;padding:.55rem .25rem .3rem;background:linear-gradient(145deg,#fdfcf7,#e8eef0);border:1px solid #fff;box-shadow:0 .25rem .65rem rgba(75,105,125,.13);clip-path:polygon(0 0,100% 0,100% 82%,50% 100%,0 82%);transform:rotate(7deg);display:flex;align-items:center;flex-direction:column;gap:.3rem;color:#7894a3}
-#pg-chat .xw-hangtag:before{content:"";width:.35rem;height:.35rem;border:1px solid #9db3bd;border-radius:50%;margin-bottom:.15rem}
-#pg-chat .xw-hangtag span{font:.53rem Georgia,serif;letter-spacing:.08em;writing-mode:vertical-rl}
-#pg-chat .xw-ticket{position:relative;margin:-.25rem .65rem .5rem;padding:.8rem .9rem .75rem;background:linear-gradient(110deg,#f8f7f1,#edf1ef);border:1px solid rgba(255,255,255,.95);box-shadow:0 .3rem .85rem rgba(78,105,121,.09);transform:rotate(1.2deg);display:flex;align-items:center;gap:.7rem}
-#pg-chat .xw-ticket:before,#pg-chat .xw-ticket:after{content:"";position:absolute;top:50%;width:.75rem;height:.75rem;border-radius:50%;background:#e8eff1;transform:translateY(-50%);border:1px solid rgba(190,205,211,.35)}
-#pg-chat .xw-ticket:before{left:-.42rem}#pg-chat .xw-ticket:after{right:-.42rem}
-#pg-chat .xw-ticket-mark{font:1.35rem Georgia,serif;color:#91aab8;border-right:1px dashed #c4d2d8;padding-right:.7rem}
+#pg-chat .xw-love-top{display:flex;justify-content:space-between;align-items:center;margin:.05rem .08rem .45rem}
+#pg-chat .xw-kicker{font:.55rem Georgia,serif;letter-spacing:.24em;color:#8da6b3}
+#pg-chat .xw-edition{font:.55rem Georgia,serif;letter-spacing:.13em;color:#9aafb9}
+#pg-chat .xw-love-title{font:italic 2.5rem/.98 Georgia,"Times New Roman",serif;letter-spacing:.005em;color:#6e899a;margin:.15rem 0 .38rem}
+#pg-chat .xw-love-title span{font-size:1.28rem;color:#9db4c0;vertical-align:.12em}
+#pg-chat .xw-since{font:.68rem Georgia,"Songti SC",serif;letter-spacing:.18em;color:#8ba0ab}
+#pg-chat .xw-days{display:flex;align-items:baseline;gap:.48rem;margin:.62rem 0 .12rem;color:#7893a2}
+#pg-chat .xw-days strong{font:italic 2.15rem/.95 Georgia,serif;font-weight:400;letter-spacing:.025em}
+#pg-chat .xw-days span{font:italic .82rem Georgia,serif;letter-spacing:.09em;color:#8fa4ae}
+#pg-chat .xw-love-note{font:.69rem "Songti SC","Noto Serif SC",serif;letter-spacing:.1em;color:#91a5ae;margin:.35rem 0 .15rem}
+#pg-chat .xw-envelope-scene{position:relative;height:14.5rem;min-height:14.5rem;margin:.25rem -.05rem .05rem;display:flex;align-items:center;justify-content:center;isolation:isolate}
+#pg-chat .xw-envelope{position:relative;width:88%;height:10.65rem;border-radius:.22rem .22rem .5rem .5rem;background:linear-gradient(145deg,#fffefa 0%,#f8f7f1 48%,#e8edef 100%);border:1px solid rgba(255,255,255,.96);box-shadow:0 1rem 1.8rem rgba(73,105,124,.13),0 .18rem .35rem rgba(73,105,124,.07),inset 0 1px 0 #fff;transform:rotate(-1.25deg);overflow:visible}
+#pg-chat .xw-envelope:before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(145deg,transparent 49.5%,rgba(172,192,202,.25) 50%,transparent 50.65%),linear-gradient(35deg,transparent 49.5%,rgba(172,192,202,.19) 50%,transparent 50.65%),repeating-linear-gradient(0deg,rgba(120,145,155,.018) 0 1px,transparent 1px 4px);pointer-events:none}
+#pg-chat .xw-envelope:after{content:"";position:absolute;z-index:1;left:0;right:0;top:0;height:58%;background:linear-gradient(155deg,#fffefa 0%,#f0f2ed 100%);clip-path:polygon(0 0,100% 0,50% 100%);border-bottom:1px solid rgba(170,190,199,.25);filter:drop-shadow(0 2px 2px rgba(90,120,140,.08));pointer-events:none}
+#pg-chat .xw-envelope-caption{position:absolute;z-index:2;left:1.05rem;bottom:.9rem;font:italic 1.12rem Georgia,serif;color:#8ba2ae;letter-spacing:.025em}
+#pg-chat .xw-envelope-caption small{display:block;margin-top:.24rem;font:.48rem Georgia,serif;letter-spacing:.24em;color:#a6b7bf}
+#pg-chat .xw-wax{position:absolute;z-index:4;left:50%;top:54%;transform:translate(-50%,-50%) rotate(1.25deg);width:3.05rem;height:3.05rem;border-radius:50%;display:grid;place-items:center;color:#f8f6ef;font:1.16rem Georgia,serif;background:radial-gradient(circle at 34% 27%,#d0dfe4 0%,#9ab4c1 52%,#718fa0 100%);border:1px solid rgba(255,255,255,.85);box-shadow:0 .3rem .7rem rgba(65,97,117,.25),inset 0 1px 3px rgba(255,255,255,.78),inset 0 -2px 3px rgba(70,100,118,.16)}
+#pg-chat .xw-ribbon{position:absolute;z-index:5;width:4.4rem;height:.27rem;left:50%;top:54%;transform:translate(-50%,-50%) rotate(-1deg);border-radius:1rem;background:linear-gradient(90deg,#a9bfca,#edf2f2 48%,#9db6c3);opacity:.88}
+#pg-chat .xw-stamp{position:absolute;z-index:3;right:1rem;top:.85rem;width:2.05rem;height:2.48rem;border:1px dashed #b8c9d0;display:grid;place-items:center;color:#8fa8b5;font:.9rem Georgia,serif;line-height:1.1;transform:rotate(7deg);background:rgba(222,233,236,.38);text-align:center}
+#pg-chat .xw-hangtag{position:absolute;z-index:7;right:.15rem;top:.05rem;width:3.1rem;height:4.75rem;padding:.5rem .2rem .28rem;background:linear-gradient(145deg,#fffefa,#e8eef0);border:1px solid rgba(255,255,255,.96);box-shadow:0 .35rem .8rem rgba(75,105,125,.14);clip-path:polygon(0 0,100% 0,100% 82%,50% 100%,0 82%);transform:rotate(6deg);display:flex;align-items:center;flex-direction:column;gap:.28rem;color:#7894a3}
+#pg-chat .xw-hangtag:before{content:"";width:.32rem;height:.32rem;border:1px solid #9db3bd;border-radius:50%;margin-bottom:.12rem}
+#pg-chat .xw-hangtag:after{content:"";position:absolute;top:-1.5rem;left:50%;height:1.55rem;border-left:1px solid rgba(135,163,177,.65);transform:rotate(-5deg);transform-origin:bottom}
+#pg-chat .xw-hangtag span{font:.48rem Georgia,serif;letter-spacing:.1em;writing-mode:vertical-rl}
+#pg-chat .xw-ticket{position:relative;margin:-.05rem .72rem .65rem;padding:.68rem .85rem .65rem;background:linear-gradient(105deg,#fbfaf5,#eef2ef);border:1px solid rgba(255,255,255,.96);box-shadow:0 .35rem .85rem rgba(78,105,121,.08);transform:rotate(.65deg);display:flex;align-items:center;gap:.72rem}
+#pg-chat .xw-ticket:before,#pg-chat .xw-ticket:after{content:"";position:absolute;top:50%;width:.7rem;height:.7rem;border-radius:50%;background:#e9f0f1;transform:translateY(-50%);border:1px solid rgba(190,205,211,.38)}
+#pg-chat .xw-ticket:before{left:-.39rem}#pg-chat .xw-ticket:after{right:-.39rem}
+#pg-chat .xw-ticket-mark{font:1.2rem Georgia,serif;color:#91aab8;border-right:1px dashed #c4d2d8;padding-right:.72rem}
 #pg-chat .xw-ticket-copy{flex:1;min-width:0}
-#pg-chat .xw-ticket-copy strong{display:block;font:italic 1.15rem Georgia,serif;color:#718b9b}
-#pg-chat .xw-ticket-copy small{display:block;margin-top:.18rem;font-size:.62rem;letter-spacing:.08em;color:#9aadb6}
-#pg-chat .xw-ticket-no{font:.55rem Georgia,serif;letter-spacing:.12em;color:#9aadb6;writing-mode:vertical-rl}
-#pg-chat .xw-entry-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin:.7rem .05rem .1rem}
-#pg-chat .xw-entry{position:relative;min-height:8.2rem;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:.4rem;padding:.85rem .85rem .75rem;border:1px solid rgba(255,255,255,.92);border-radius:.18rem .7rem .18rem .7rem;background:linear-gradient(145deg,rgba(255,255,255,.9),rgba(240,244,242,.86));box-shadow:0 .3rem .8rem rgba(77,107,125,.08);color:#657f8d;text-align:left;overflow:hidden;cursor:pointer}
-#pg-chat .xw-entry:active{transform:translateY(1px)}
-#pg-chat .xw-entry.chat-entry{grid-column:1/-1;min-height:6.2rem;flex-direction:row;align-items:center;padding:1rem 1.1rem}
-#pg-chat .xw-entry:after{content:"";position:absolute;right:-1.1rem;bottom:-1.45rem;width:4.3rem;height:4.3rem;border:1px solid rgba(143,170,184,.22);border-radius:50%}
-#pg-chat .xw-entry-mark{width:2.2rem;height:2.2rem;display:grid;place-items:center;border-radius:50%;background:linear-gradient(145deg,#e5edf0,#cbdce3);color:#7793a2;font:1.1rem Georgia,serif;flex:none;box-shadow:inset 0 1px 2px rgba(255,255,255,.9)}
-#pg-chat .xw-entry strong{display:block;font:italic 1.13rem Georgia,"Songti SC",serif;letter-spacing:.02em;color:#718b9a}
-#pg-chat .xw-entry small{display:block;margin-top:.2rem;font-size:.62rem;color:#9aadb6;letter-spacing:.04em}
-#pg-chat .xw-entry .xw-entry-arrow{margin-left:auto;color:#9aafba;font-size:1rem}
+#pg-chat .xw-ticket-copy strong{display:block;font:italic 1.05rem Georgia,serif;color:#718b9b}
+#pg-chat .xw-ticket-copy small{display:block;margin-top:.16rem;font-size:.59rem;letter-spacing:.075em;color:#9aadb6}
+#pg-chat .xw-ticket-no{font:.49rem Georgia,serif;letter-spacing:.11em;color:#9aadb6;writing-mode:vertical-rl}
+#pg-chat .xw-entry-grid{display:grid;grid-template-columns:1fr 1fr;gap:.58rem;margin:.65rem .02rem .05rem}
+#pg-chat .xw-entry{position:relative;min-height:7.2rem;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:.35rem;padding:.78rem .8rem .7rem;border:1px solid rgba(255,255,255,.96);border-radius:.16rem .62rem .16rem .62rem;background:linear-gradient(145deg,rgba(255,255,255,.88),rgba(239,244,243,.86));box-shadow:0 .28rem .75rem rgba(77,107,125,.075),inset 0 1px 0 rgba(255,255,255,.95);color:#657f8d;text-align:left;overflow:hidden;cursor:pointer;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+#pg-chat .xw-entry:active{transform:translateY(1px) scale(.99);box-shadow:0 .12rem .35rem rgba(77,107,125,.08)}
+#pg-chat .xw-entry:after{content:"";position:absolute;right:-1.35rem;bottom:-1.55rem;width:4.1rem;height:4.1rem;border:1px solid rgba(143,170,184,.19);border-radius:50%;pointer-events:none}
+#pg-chat .xw-entry.chat-entry{grid-column:1/-1;min-height:5.45rem;flex-direction:row;align-items:center;padding:.82rem 1rem}
+#pg-chat .xw-entry-mark{width:2.05rem;height:2.05rem;display:grid;place-items:center;border-radius:50%;background:linear-gradient(145deg,#edf2f2,#d2e0e5);color:#7793a2;font:1.02rem Georgia,serif;flex:none;box-shadow:inset 0 1px 2px rgba(255,255,255,.95),0 2px 5px rgba(94,125,143,.08)}
+#pg-chat .xw-entry strong{display:block;font:italic 1.08rem Georgia,"Songti SC",serif;letter-spacing:.015em;color:#718b9a}
+#pg-chat .xw-entry small{display:block;margin-top:.17rem;font-size:.58rem;color:#9aadb6;letter-spacing:.035em}
+#pg-chat .xw-entry .xw-entry-arrow{margin-left:auto;color:#9aafba;font-size:.9rem;transition:transform .2s ease}
+#pg-chat .xw-entry:active .xw-entry-arrow{transform:translate(2px,-2px)}
 #pg-chat .xw-entry .xw-entry-bottom{display:flex;align-items:center;justify-content:space-between;width:100%}
-#pg-chat .xw-entry.chat-entry .xw-entry-bottom{width:auto;display:block;flex:1;margin-left:.8rem}
-#pg-chat .xw-entry.chat-entry .xw-entry-mark{width:2.75rem;height:2.75rem;font-size:1.25rem}
-#pg-chat .xw-footer-note{text-align:center;margin:.85rem 0 .2rem;font:.56rem Georgia,serif;letter-spacing:.2em;color:#9aadb6}
+#pg-chat .xw-entry.chat-entry .xw-entry-bottom{width:auto;display:block;flex:1;margin-left:.78rem}
+#pg-chat .xw-entry.chat-entry .xw-entry-mark{width:2.55rem;height:2.55rem;font-size:1.16rem}
+#pg-chat .xw-footer-note{text-align:center;margin:.8rem 0 .15rem;font:.5rem Georgia,serif;letter-spacing:.23em;color:#9aadb6}
 #pg-chat .xw-back{align-self:flex-start;border:0;background:transparent;color:inherit;padding:.25rem 0 .9rem;font:.78rem "Songti SC",serif}
 #pg-chat .xw-compose{width:100%;min-height:5.2rem;margin:1rem 0 .5rem;padding:.85rem;border:1px solid rgba(130,166,172,.25);border-radius:.85rem;background:rgba(255,255,255,.62);font:.82rem/1.7 sans-serif;color:inherit;resize:vertical}
 #pg-chat .xw-postbtn{align-self:flex-end;border:0;border-radius:2rem;padding:.55rem 1.15rem;background:#789ba2;color:white;font-size:.72rem}
@@ -3539,8 +3542,10 @@ html.dark #pg-chat #xiaowoHub,html.dark #pg-chat #xiaowoFeed,html.dark #pg-chat 
 #pg-chat .xw-post-meta{font-size:.65rem;color:#91a6aa;margin-bottom:.55rem}
 #pg-chat .xw-post-body{font:.86rem/1.8 "Songti SC","Noto Serif SC",serif;white-space:pre-wrap;overflow-wrap:anywhere}
 #pg-chat .xw-empty{padding:3rem 1rem;text-align:center;color:#91a6aa;font:.8rem/2 "Songti SC",serif}
-@media(max-height:740px){#pg-chat #xiaowoHub{padding-top:calc(.7rem + env(safe-area-inset-top))}#pg-chat .xw-envelope-scene{min-height:14.2rem}#pg-chat .xw-envelope{height:10.3rem}#pg-chat .xw-entry{min-height:7.2rem}}
+@media(max-height:740px){#pg-chat #xiaowoHub{padding-top:calc(.65rem + env(safe-area-inset-top))}#pg-chat .xw-envelope-scene{height:12.3rem;min-height:12.3rem}#pg-chat .xw-envelope{height:9.25rem}#pg-chat .xw-entry{min-height:6.55rem}#pg-chat .xw-entry.chat-entry{min-height:5rem}}
+@media(max-width:360px){#pg-chat #xiaowoHub{padding-left:.9rem;padding-right:.9rem}#pg-chat .xw-envelope-scene{height:12.8rem;min-height:12.8rem}#pg-chat .xw-envelope{width:87%}#pg-chat .xw-ticket{margin-left:.45rem;margin-right:.45rem}}
 @media(min-width:480px){#pg-chat #xiaowoHub{padding-left:1.35rem;padding-right:1.35rem}}
+@media(prefers-reduced-motion:reduce){#pg-chat .xw-entry,#pg-chat .xw-entry .xw-entry-arrow{transition:none}}
 </style>
 <section id="xiaowoHub" aria-label="Love">
  <div class="xw-love-top"><span class="xw-kicker">A PRIVATE LITTLE WORLD</span><span class="xw-edition">YOU & SONG QI · 01</span></div>
