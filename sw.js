@@ -1,5 +1,5 @@
 /* 小窝 PWA Service Worker：只缓存本站外壳，不缓存 API、聊天请求或用户数据。 */
-const CACHE = 'our-home-shell-v2';
+const CACHE = 'our-home-shell-v3';
 const CACHE_PREFIX = 'our-home-shell-';
 const CORE = ['./', './index.html', './manifest.webmanifest', './icon.svg'];
 
